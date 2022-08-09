@@ -38,3 +38,12 @@ font-size: 16px;
 font-weight: 400;
 color: var(--gray-col);
 }
+
+a {
+  font-weight: 600;
+}
+
+a:hover {
+  color: var(--pri--col);
+  transition: all ease 0.2s;
+}

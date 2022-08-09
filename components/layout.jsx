@@ -3,7 +3,7 @@ import Header from "./header";
 
 const Layout = ({ children }) => {
   return (
-    <div >
+    <div className="px-20 py-7" >
       <Header />
       {children}
     </div>
