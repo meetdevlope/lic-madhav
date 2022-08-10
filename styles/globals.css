@@ -4,6 +4,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap");
 
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 @layer components {
   section {
     @apply px-10 tab:px-20;
@@ -31,7 +33,7 @@
     @apply text-pink-light transition-all;
   }
   button {
-    @apply font-poppins
+    @apply font-poppins font-semibold
   }
   label {
     @apply text-sm opacity-50

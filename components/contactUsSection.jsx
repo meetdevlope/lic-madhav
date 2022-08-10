@@ -18,7 +18,7 @@ const ContactUsSection = () => {
     },
   ];
   return (
-    <section className="bg-pink flex flex-col tab:flex-row py-16 tab:py-">
+    <section className="bg-pink flex flex-col tab:flex-row py-16">
       <div className="flex-1">
         <h3 className="text-white">Contact Us</h3>
 

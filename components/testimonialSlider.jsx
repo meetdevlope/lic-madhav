@@ -77,7 +77,7 @@ const TestimonialSlider = ({ data }) => {
 
   return (
     <>
-      <div className="testimonialSection px-4 lg:h-screen h-auto flex flex-col gap-12 pt-16">
+      <div className="testimonialSection px-4 lg:h-screen h-auto flex flex-col gap-12 pt-16 max-w-7xl mx-auto my-0">
         <h2 className="testimonial-title text-3xl text-[#F77B54] font-bold my-0 mx-auto pt-0 lg:pt-32">
           Testimonials
         </h2>
@@ -97,7 +97,7 @@ const TestimonialSlider = ({ data }) => {
                     />
                     <div className="flex flex-col">
                       <h1 className="text-xl text-pink-dark">{element.name}</h1>
-                      <h2 className="text-[#F77B54]">{element.role}</h2>
+                      <h4 className="text-[#F77B54]">{element.role}</h4>
                     </div>
                   </div>
                 </div>
