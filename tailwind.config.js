@@ -8,12 +8,19 @@ module.exports = {
     colors: {
       white: '#FFFFFF',
       black: '#000000',
-      gray: '#D4D4D4',
+      gray: '#b2b2b2',
       pink: {
         light: '#ef51a5',
         DEFAULT: '#eb268f',
         dark: '#bc1e72',
       },
+    },
+    screens: {
+      tab: '801px'
+    },
+    fontFamily: {
+      Oswald: ['Oswald', 'sans-serif'],
+      poppins: ['poppins', 'sans-serif']
     },
     extend: {
       aspectRatio: {
