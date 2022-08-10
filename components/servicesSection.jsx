@@ -13,7 +13,7 @@ const ServicesSection = () => {
         <CardComponent cardTitle={'Category 4'} icon={<BiHome size={'2rem'} />} cardDescription={'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.'} />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ServicesSection
+export default ServicesSection;

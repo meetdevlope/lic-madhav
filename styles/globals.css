@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap");
 
 @layer components {
   section {
-    @apply px-10 tab:px-20 
+    @apply px-10 tab:px-20;
   }
   h1 {
     @apply tab:text-[86px] font-bold tab:leading-[100px] text-5xl text-center tab:text-left font-Oswald
@@ -28,13 +28,12 @@
     @apply font-semibold font-poppins
   }
   a:hover {
-    @apply text-pink-light transition-all
+    @apply text-pink-light transition-all;
   }
   button {
     @apply font-poppins
   }
 }
-
 
 * {
   padding: 0;
@@ -48,4 +47,3 @@
   --white-col: #fff;
   --gray-col: #b2b2b2;
 }
-
