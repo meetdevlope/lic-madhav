@@ -13,12 +13,13 @@
   --pri--col: #eb268f;
   --black-col: #000;
   --white-col: #fff;
-  --gray-col: #d4d4d4;
+  --gray-col: #b2b2b2;
 }
 
 h1 {
 font-size: 96px;
 font-weight: 700;;
+line-height: 100px;
 }
 
 h2 {

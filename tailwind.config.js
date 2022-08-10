@@ -15,7 +15,11 @@ module.exports = {
         dark: '#bc1e72',
       },
     },
-    extend: {},
+    extend: {
+      aspectRatio: {
+        'h-image': '3/4'
+      }
+    },
   },
   plugins: [],
 }

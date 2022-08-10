@@ -1,10 +1,12 @@
 import React from 'react'
-import ButtonComponent from '../components/buttonComponent'
+import HeroSection from '../components/heroSection'
 
 function Home() {
 
   return (
-    <div></div>
+    <main>
+      <HeroSection />
+    </main>
   )
 }
 
