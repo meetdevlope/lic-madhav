@@ -1,4 +1,5 @@
 import React from 'react'
+import ExperienceSection from '../components/experienceSection'
 import HeroSection from '../components/heroSection'
 import ServicesSection from '../components/servicesSection'
 
@@ -8,6 +9,7 @@ function Home() {
     <main>
       <HeroSection />
       <ServicesSection />
+      <ExperienceSection />
     </main>
   )
 }

@@ -17,7 +17,7 @@ const counterData = [
 
 const Counter = () => {
   return (
-    <div className="w-full flex flex-wrap justify-center gap-16">
+    <div className="w-full flex flex-1 flex-wrap tab:flex-nowrap justify-center gap-8 tab:gap-16">
       {counterData.map((counter) => (
         <div className="text-center" key={counter.number}>
           <span className="text-4xl font-bold">{counter.number}+</span>

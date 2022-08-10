@@ -8,11 +8,11 @@ const Header = () => {
       <img src="/images/madhav_lic_logo.png" alt="logo" className="h-full" />
     </div>
     <div className="flex flex-col gap-2 tab:hidden" >
-      <div className="w-10 h-0.5 rounded-full bg-black" ></div>
-      <div className="w-10 h-0.5 rounded-full bg-black" ></div>
-      <div className="w-10 h-0.5 rounded-full bg-black" ></div>
+      <div className="w-8 h-0.5 rounded-full bg-black" ></div>
+      <div className="w-8 h-0.5 rounded-full bg-black" ></div>
+      <div className="w-8 h-0.5 rounded-full bg-black" ></div>
     </div>
-    <div className=" hidden tab:flex tab:justify-center tab:items-center tab:gap-8" >
+    <div className="hidden tab:flex tab:justify-center tab:items-center tab:gap-8" >
       <a href="#" >Home</a>
       <a href="#" >Services</a>
       <a href="#" >About Us</a>
