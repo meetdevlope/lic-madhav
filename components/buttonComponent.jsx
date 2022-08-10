@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 
-function ButtonComponent({ buttonText, appearance, ...props }) {
+function ButtonComponent({ buttonText, appearance, buttonClass, ...props }) {
   return (
     <button
       {...props}
@@ -11,6 +11,7 @@ function ButtonComponent({ buttonText, appearance, ...props }) {
         "border-pink border text-pink hover:bg-pink-light hover:text-white transition-all ":
           appearance === "pri-out",
         "bg-gray text-white cursor-not-allowed": appearance === "disabled",
+        [buttonClass]: !!buttonClass,
       })}
     >
       {buttonText}
