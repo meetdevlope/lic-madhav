@@ -18,7 +18,7 @@ const ContactUsSection = () => {
     },
   ];
   return (
-    <section className="bg-pink flex flex-col tab:flex-row py-8">
+    <section className="bg-pink flex flex-col tab:flex-row py-16 tab:py-">
       <div className="flex-1">
         <h3 className="text-white">Contact Us</h3>
 
@@ -28,10 +28,10 @@ const ContactUsSection = () => {
           fugit distinctio commodi amet repellendus unde.
         </p>
 
-        <div className="my-8 tab:mt-16 tab:mb-8 flex flex-col gap-6">
+        <div className="my-8 tab:mt-16 tab:mb-8 flex flow-row flex-wrap tab:flex-col gap-6">
           {contactOptions.map((contactOption) => {
             return (
-              <div key={contactOption.text} className="flex cursor-pointer">
+              <div key={contactOption.text} className="flex items-center cursor-pointer">
                 <span className="text-white text-3xl">
                   {contactOption.icon}
                 </span>
@@ -70,8 +70,7 @@ const ContactUsSection = () => {
             className="border-b bg-[transparent] focus:outline-none"
           />
         </div>
-
-        <ButtonComponent buttonText={"Submit"} />
+        <ButtonComponent buttonText={"Submit"} buttonClass='self-end bg-white text-pink mt-8' />
       </form>
     </section>
   );
