@@ -1,5 +1,4 @@
 import React from "react";
-import ButtonComponent from "./buttonComponent";
 import Image from "next/image";
 import Counter from "./counter";
 
