@@ -22,9 +22,8 @@ const ContactUsSection = () => {
       <div className="flex-1">
         <h3 className="text-white">Contact Us</h3>
 
-        <p className="text-white mt-4 tab:w-2/3">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum{" "}
-          <br />
+        <p className="text-white my-8 tab:w-2/3">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
           fugit distinctio commodi amet repellendus unde.
         </p>
 
@@ -38,7 +37,7 @@ const ContactUsSection = () => {
                 <span className="text-white text-3xl">
                   {contactOption.icon}
                 </span>
-                <h4 className="text-white ml-4">{contactOption.text}</h4>
+                <h4 className="text-white ml-4 text-left">{contactOption.text}</h4>
               </div>
             );
           })}

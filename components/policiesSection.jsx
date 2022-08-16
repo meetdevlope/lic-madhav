@@ -54,8 +54,8 @@ const PoliciesSection = () => {
     },
   ];
   return (
-    <section className="bg-pink flex flex-col justify-center items-center p-12 tab:p-20">
-      <h2 className="mb-16 text-3xl text-white tab:mb-30">Best Policies</h2>
+    <section className="bg-[#f6f6f6] flex flex-col justify-center items-center p-12 tab:p-20">
+      <h3 className="mb-16 text-pink tab:mb-30">Best Policies</h3>
 
       <div className="flex justify-center items-center flex-wrap gap-8 max-w-7xl">
         {cardContent.map((ele, idx) => {

@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section className="py-">
       <div className="container flex justify-center flex-wrap gap-20 py-4 max-w-7xl mx-auto">
-        <div className="flex-1 flex flex-col justify-center items-start">
+        <div className="flex-1 flex flex-col justify-center tab:items-start items-center">
           <h1>Lorem ipsum dolor sit amet consetur.</h1>
           <p className="mt-8 mb-12">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt

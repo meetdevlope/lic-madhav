@@ -69,7 +69,6 @@ const TestimonialSlider = ({ data }) => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
         },
       },
     ],
@@ -78,9 +77,9 @@ const TestimonialSlider = ({ data }) => {
   return (
     <>
       <div className="testimonialSection px-4 lg:h-screen h-auto flex flex-col gap-12 pt-16 max-w-7xl mx-auto my-0">
-        <h2 className="testimonial-title text-3xl text-pink font-bold my-0 mx-auto pt-0 lg:pt-32">
+        <h3 className="testimonial-title text-pink font-bold my-0 mx-auto pt-0 lg:pt-32">
           Testimonials
-        </h2>
+        </h3>
         <div className="Testi-slider-SR w-full lg:w-3/4 mx-auto">
           <Slider {...settings}>
             {images.map((element, idx) => (
@@ -92,7 +91,7 @@ const TestimonialSlider = ({ data }) => {
                   <div className="mt-12 flex flex-row gap-4 justify-center items-center">
                     <img
                       src={element.img}
-                      alt=""
+                      alt="profile-image"
                       className="w-16 h-16 rounded-full"
                     />
                     <div className="flex flex-col">

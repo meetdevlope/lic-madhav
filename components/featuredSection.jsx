@@ -67,10 +67,10 @@ const FeaturedBrands = ({ data }) => {
 
   return (
     <>
-      <div className="testimonialSection px-4 lg:h-screen h-auto flex flex-col gap-8 pt-16 max-w-7xl mx-auto my-0">
-        <h2 className="testimonial-title text-3xl text-pink font-bold my-0 mx-auto pt-0 lg:pt-32">
+      <div className="testimonialSection lg:h-screen h-auto flex flex-col gap-8 pt-16 px-8 tab:max-w-7xl mx-auto my-0">
+        <h3 className="testimonial-title text-3xl text-pink font-bold my-0 mx-auto pt-0 lg:pt-32">
           Featured Brands
-        </h2>
+        </h3>
         <div className="Testi-slider-SR w-full mx-auto">
           <Slider className="" {...settings}>
             {logos.map((element, idx) => (

@@ -17,7 +17,7 @@
     @apply tab:text-6xl font-bold text-center tab:text-left text-4xl font-Oswald;
   }
   h3 {
-    @apply tab:text-2xl font-semibold text-center tab:text-left text-xl font-poppins;
+    @apply font-semibold text-center tab:text-left text-4xl font-poppins;
   }
   h4 {
     @apply tab:text-base font-semibold text-center tab:text-left text-xs font-poppins;
