@@ -11,32 +11,31 @@
     @apply px-10 tab:px-20;
   }
   h1 {
-    @apply tab:text-[86px] font-bold tab:leading-[100px] text-5xl text-center tab:text-left font-Oswald
-
+    @apply tab:text-[86px] font-bold tab:leading-[100px] text-5xl text-center tab:text-left font-Oswald;
   }
   h2 {
-    @apply tab:text-6xl font-bold text-center tab:text-left text-4xl font-Oswald
+    @apply tab:text-6xl font-bold text-center tab:text-left text-4xl font-Oswald;
   }
   h3 {
-    @apply tab:text-2xl font-semibold text-center tab:text-left text-base font-poppins
+    @apply tab:text-2xl font-semibold text-center tab:text-left text-xl font-poppins;
   }
   h4 {
-    @apply tab:text-base font-semibold text-center tab:text-left text-xs font-poppins
+    @apply tab:text-base font-semibold text-center tab:text-left text-xs font-poppins;
   }
   p {
-    @apply tab:text-sm font-normal text-xs text-gray text-center tab:text-left font-poppins
+    @apply tab:text-sm font-normal text-xs text-gray text-center tab:text-left font-poppins;
   }
   a {
-    @apply font-semibold font-poppins
+    @apply font-semibold font-poppins;
   }
   a:hover {
     @apply text-pink-light transition-all;
   }
   button {
-    @apply font-poppins font-semibold
+    @apply font-poppins font-semibold;
   }
   label {
-    @apply text-sm opacity-50
+    @apply text-sm opacity-50;
   }
 }
 

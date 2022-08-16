@@ -6,25 +6,25 @@ const TestimonialSlider = ({ data }) => {
   const images = useMemo(
     () => [
       {
-        img: "https://images.unsplash.com/photo-1620911166482-1df903d9445e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80",
+        img: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
         text: "As a brand owner, we have partnered with Dotcom Reps since 2014 and have experienced steady growth and profitability with Amazon. They have provided us a seamless path to positioning and controlling our brand. We would highly recommend their services.",
         name: "Rohini Patel",
         role: "Analyst",
       },
       {
-        img: "https://images.unsplash.com/photo-1620911166482-1df903d9445e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80",
+        img: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
         text: "As a brand seller, we have partnered with Dotcom Reps since 2014 and have experienced steady growth and profitability with Amazon. They have provided us a seamless path to positioning and controlling our brand. We would highly recommend their services.",
         name: "Shreya Patel",
         role: "Analyst",
       },
       {
-        img: "https://images.unsplash.com/photo-1620911166482-1df903d9445e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80",
+        img: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
         text: "As a brand owner, we have partnered with Dotcom Reps since 2014 and have experienced steady growth and profitability with Amazon. They have provided us a seamless path to positioning and controlling our brand. We would highly recommend their services.",
         name: "Tanu Jain",
         role: "Analyst",
       },
       {
-        img: "https://images.unsplash.com/photo-1620911166482-1df903d9445e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80",
+        img: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
         text: "As a brand owner, we have partnered with Dotcom Reps since 2014 and have experienced steady growth and profitability with Amazon. They have provided us a seamless path to positioning and controlling our brand. We would highly recommend their services.",
         name: "Hetal Agrawal",
         role: "Analyst",
@@ -78,7 +78,7 @@ const TestimonialSlider = ({ data }) => {
   return (
     <>
       <div className="testimonialSection px-4 lg:h-screen h-auto flex flex-col gap-12 pt-16 max-w-7xl mx-auto my-0">
-        <h2 className="testimonial-title text-3xl text-[#F77B54] font-bold my-0 mx-auto pt-0 lg:pt-32">
+        <h2 className="testimonial-title text-3xl text-pink font-bold my-0 mx-auto pt-0 lg:pt-32">
           Testimonials
         </h2>
         <div className="Testi-slider-SR w-full lg:w-3/4 mx-auto">
@@ -86,8 +86,8 @@ const TestimonialSlider = ({ data }) => {
             {images.map((element, idx) => (
               <>
                 <div className="slideSR m-8">
-                  <div className="testi-content bg-black text-pink-dark p-8 rounded-2xl">
-                    <p>{element.text}</p>
+                  <div className="testi-content bg-pink p-8 rounded-2xl">
+                    <p className="text-white">{element.text}</p>
                   </div>
                   <div className="mt-12 flex flex-row gap-4 justify-center items-center">
                     <img
@@ -97,7 +97,7 @@ const TestimonialSlider = ({ data }) => {
                     />
                     <div className="flex flex-col">
                       <h1 className="text-xl text-pink-dark">{element.name}</h1>
-                      <h4 className="text-[#F77B54]">{element.role}</h4>
+                      <h4 className="text-pink-light">{element.role}</h4>
                     </div>
                   </div>
                 </div>
