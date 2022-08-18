@@ -34,7 +34,7 @@ const Header = () => {
         <ButtonComponent appearance={"pri-out"} buttonText={"Know More"} />
       </div>
       <div className={`black-backdrop bg-black opacity-80 fixed top-0 left-0 h-screen w-screen transition-all z-[5] ${hamOpen ? 'block' : 'hidden'}`}></div>
-      <div className={`flex flex-col justify-center items-center gap-6 bg-white px-20 fixed top-0 right-0 h-screen z-10 tab:hidden transition-all ${hamOpen ? 'translate-x-0' : 'translate-x-full'} `}>
+      <div className={`flex flex-col items-end gap-6 bg-white pt-40 px-20 fixed top-0 right-0 h-screen z-10 tab:hidden transition-all ${hamOpen ? 'translate-x-0' : 'translate-x-full'} `}>
         <a href="#">Home</a>
         <a href="#">Services</a>
         <a href="#">About Us</a>

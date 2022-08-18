@@ -23,7 +23,7 @@ const HeroSection = () => {
         <div className="relative basis-[500px] aspect-h-image h-auto rounded-3xl overflow-hidden">
           <Image
             priority
-            src="/Images/portrait.png"
+            src="https://i.ibb.co/tZKng9L/portrait.png"
             layout={"fill"}
             objectFit={"cover"}
             objectPosition={"top"}
