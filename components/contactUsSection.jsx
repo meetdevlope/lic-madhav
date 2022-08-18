@@ -18,7 +18,7 @@ const ContactUsSection = () => {
     },
   ];
   return (
-    <section className="bg-pink flex flex-col gap-2 tab:flex-row py-16">
+    <section className="bg-brand flex flex-col gap-2 tab:flex-row py-16">
       <div className="flex-1">
         <h3 className="text-white">Contact Us</h3>
 
@@ -45,7 +45,7 @@ const ContactUsSection = () => {
       </div>
       <form
         action=""
-        className="bg-pink-light flex flex-col gap-6 flex-1 p-10 text-white rounded-xl"
+        className="bg-white flex flex-col gap-6 flex-1 p-10 text-black rounded-xl"
       >
         <div className="flex flex-col">
           <label htmlFor="firstName">First Name</label>
@@ -74,7 +74,8 @@ const ContactUsSection = () => {
         </div>
         <ButtonComponent
           buttonText={"Submit"}
-          buttonClass="self-end bg-white text-pink mt-8"
+          appearance='pri'
+          buttonClass="self-end mt-8"
         />
       </form>
     </section>

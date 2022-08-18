@@ -4,7 +4,7 @@ import ButtonComponent from "./buttonComponent";
 
 const HeroSection = () => {
   return (
-    <section className="py-">
+    <section className="py-10">
       <div className="container flex justify-center flex-wrap gap-20 py-4 max-w-7xl mx-auto">
         <div className="flex-1 flex flex-col justify-center tab:items-start items-center">
           <h1>Lorem ipsum dolor sit amet consetur.</h1>

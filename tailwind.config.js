@@ -9,10 +9,10 @@ module.exports = {
       white: '#FFFFFF',
       black: '#000000',
       gray: '#b2b2b2',
-      pink: {
-        light: '#ef51a5',
-        DEFAULT: '#eb268f',
-        dark: '#bc1e72',
+      brand: {
+        light: '#339ac0',
+        DEFAULT: '#0081B0',
+        dark: '#00678d',
       },
     },
     screens: {

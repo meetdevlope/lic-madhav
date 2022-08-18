@@ -6,7 +6,7 @@ const CardComponent = ({ icon, cardTitle, cardDescription }) => {
     <div className="bg-white w-72 rounded-lg">
       <div className="p-8 flex flex-col items-center">
         {icon}
-        <h4 className="text-pink text-2xl font-bold m-4">{cardTitle}</h4>
+        <h4 className="text-black text-2xl font-bold m-4">{cardTitle}</h4>
         <p className="text-center mb-8">{cardDescription}</p>
         <ButtonComponent
           appearance={"pri"}

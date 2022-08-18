@@ -77,7 +77,7 @@ const TestimonialSlider = ({ data }) => {
   return (
     <>
       <div className="testimonialSection px-4 lg:h-screen h-auto flex flex-col gap-12 pt-16 max-w-7xl mx-auto my-0">
-        <h3 className="testimonial-title text-pink font-bold my-0 mx-auto pt-0 lg:pt-32">
+        <h3 className="testimonial-title text-black font-bold my-0 mx-auto pt-0 lg:pt-32">
           Testimonials
         </h3>
         <div className="Testi-slider-SR w-full lg:w-3/4 mx-auto">
@@ -85,7 +85,7 @@ const TestimonialSlider = ({ data }) => {
             {images.map((element, idx) => (
               <>
                 <div className="slideSR m-8">
-                  <div className="testi-content bg-pink p-8 rounded-2xl">
+                  <div className="testi-content bg-brand p-8 rounded-2xl">
                     <p className="text-white">{element.text}</p>
                   </div>
                   <div className="mt-12 flex flex-row gap-4 justify-center items-center">
@@ -95,8 +95,8 @@ const TestimonialSlider = ({ data }) => {
                       className="w-16 h-16 rounded-full"
                     />
                     <div className="flex flex-col">
-                      <h1 className="text-xl text-pink-dark">{element.name}</h1>
-                      <h4 className="text-pink-light">{element.role}</h4>
+                      <h1 className="text-xl text-brand-dark">{element.name}</h1>
+                      <h4 className="text-brand-light">{element.role}</h4>
                     </div>
                   </div>
                 </div>

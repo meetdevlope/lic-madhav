@@ -7,10 +7,10 @@ const ExperienceSection = () => {
     <div>
       <section className="py-16">
         <div className="container flex justify-center flex-wrap gap-20 max-w-7xl mx-auto">
-          <div className="flex-1 flex flex-col justify-center items-start">
-            <h2>
-              <span className="text-pink">20+</span> Years of Experience
-            </h2>{" "}
+          <div className="flex-1 flex flex-col justify-center items-center tab:items-start">
+            <h3>
+              <span className="text-brand">20+</span> Years of Experience
+            </h3>{" "}
             <p className="mt-6 mb-12">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit,
               dignissimos perspiciatis voluptatem nisi quibusdam iste, eius
