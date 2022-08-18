@@ -26,10 +26,10 @@ const ExperienceSection = () => {
           <div className="relative basis-[500px] aspect-h-image h-auto rounded-3xl overflow-hidden">
             <Image
               priority
-              src="https://images.unsplash.com/photo-1620911166482-1df903d9445e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80"
+              src="/Images/portrait.png"
               layout={"fill"}
               objectFit={"cover"}
-              objectPosition={"center"}
+              objectPosition={"top"}
               alt="subject-image"
             />
           </div>
