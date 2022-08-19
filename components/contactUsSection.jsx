@@ -1,3 +1,4 @@
+import { Formik, Form } from "formik";
 import React from "react";
 import { MdCall, MdEmail, MdLocationPin } from "react-icons/md";
 import ButtonComponent from "./buttonComponent";
@@ -17,6 +18,11 @@ const ContactUsSection = () => {
       text: "New address, near old address.",
     },
   ];
+
+  const onSubmit = (values) => {
+    console.log(values);
+  };
+
   return (
     <section className="bg-brand flex flex-col gap-2 tab:flex-row py-16">
       <div className="flex-1">
@@ -37,47 +43,67 @@ const ContactUsSection = () => {
                 <span className="text-white text-3xl">
                   {contactOption.icon}
                 </span>
-                <h4 className="text-white ml-4 text-left">{contactOption.text}</h4>
+                <h4 className="text-white ml-4 text-left">
+                  {contactOption.text}
+                </h4>
               </div>
             );
           })}
         </div>
       </div>
-      <form
-        action=""
-        className="bg-white flex flex-col gap-6 flex-1 p-10 text-black rounded-xl"
-      >
-        <div className="flex flex-col">
-          <label htmlFor="firstName">First Name</label>
-          <input
-            type="text"
-            className="border-b bg-[transparent] focus:outline-none"
-          />
-        </div>
-
-        <div className="flex flex-col">
-          <label htmlFor="firstName">Last Name</label>
-          <input
-            type="text"
-            className="border-b bg-[transparent] focus:outline-none"
-          />
-        </div>
-
-        <div className="flex flex-col">
-          <label htmlFor="firstName">Email</label>
-          <input
-            type="email"
-            name=""
-            id=""
-            className="border-b bg-[transparent] focus:outline-none"
-          />
-        </div>
-        <ButtonComponent
-          buttonText={"Submit"}
-          appearance='pri'
-          buttonClass="self-end mt-8"
-        />
-      </form>
+      <div className="bg-white flex-1 p-10 text-black rounded-xl">
+        <Formik
+          onSubmit={onSubmit}
+          initialValues={{ firstName: "", lastName: "", email: "" }}
+        >
+          {({ values, handleChange }) => (
+            <Form className="flex flex-col gap-6 ">
+              <div className="flex flex-col">
+                <label htmlFor="firstName">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={values.firstName}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                  className="border-b bg-[transparent] focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="firstName">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={values.lastName}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                  className="border-b bg-[transparent] focus:outline-none"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="firstName">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={values.email}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                  className="border-b bg-[transparent] focus:outline-none"
+                />
+              </div>
+              <ButtonComponent
+                buttonText={"Submit"}
+                appearance="pri"
+                type="submit"
+                buttonClass="self-end mt-8"
+              />
+            </Form>
+          )}
+        </Formik>
+      </div>
     </section>
   );
 };

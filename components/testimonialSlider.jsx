@@ -83,7 +83,7 @@ const TestimonialSlider = ({ data }) => {
         <div className="Testi-slider-SR w-full lg:w-3/4 mx-auto">
           <Slider {...settings}>
             {images.map((element, idx) => (
-              <>
+              <div key={idx}>
                 <div className="slideSR m-8">
                   <div className="testi-content bg-brand p-8 rounded-2xl">
                     <p className="text-white">{element.text}</p>
@@ -95,12 +95,14 @@ const TestimonialSlider = ({ data }) => {
                       className="w-16 h-16 rounded-full"
                     />
                     <div className="flex flex-col">
-                      <h1 className="text-xl text-brand-dark">{element.name}</h1>
+                      <h1 className="text-xl text-brand-dark">
+                        {element.name}
+                      </h1>
                       <h4 className="text-brand-light">{element.role}</h4>
                     </div>
                   </div>
                 </div>
-              </>
+              </div>
             ))}
           </Slider>
         </div>

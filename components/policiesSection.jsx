@@ -60,13 +60,12 @@ const PoliciesSection = () => {
       <div className="flex justify-center items-center flex-wrap gap-8 max-w-7xl">
         {cardContent.map((ele, idx) => {
           return (
-            <>
-              <CardComponent
-                cardTitle={ele.cardTitle}
-                icon={ele.icon}
-                cardDescription={ele.cardDescription}
-              />
-            </>
+            <CardComponent
+              cardTitle={ele.cardTitle}
+              icon={ele.icon}
+              cardDescription={ele.cardDescription}
+              key={idx}
+            />
           );
         })}
       </div>

@@ -35,13 +35,12 @@ const ServicesSection = () => {
       <div className="flex justify-center items-center flex-wrap gap-8">
         {cardContent.map((ele, idx) => {
           return (
-            <>
-              <CardComponent
-                cardTitle={ele.cardTitle}
-                icon={ele.icon}
-                cardDescription={ele.cardDescription}
-              />
-            </>
+            <CardComponent
+              cardTitle={ele.cardTitle}
+              icon={ele.icon}
+              cardDescription={ele.cardDescription}
+              key={idx}
+            />
           );
         })}
       </div>
