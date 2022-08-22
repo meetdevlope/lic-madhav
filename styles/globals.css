@@ -26,7 +26,7 @@
     @apply tab:text-sm font-normal text-xs text-gray text-center tab:text-left font-poppins;
   }
   a {
-    @apply font-semibold text-lg tab:text-base font-poppins;
+    @apply font-semibold text-lg tab:text-base font-poppins cursor-pointer;
   }
   a:hover {
     @apply text-brand-light transition-all;
