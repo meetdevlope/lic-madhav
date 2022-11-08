@@ -1,44 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import ButtonComponent from "./buttonComponent";
 import { MdOutlineSearch } from "react-icons/md";
 import SearchBar from "./searchBar";
 import FormComponent from "./formComponent";
 
-const Solutions = () => {
-  const solutionsCards = [
-    {
-      link: "https://ajaykumarvirsangbhaipatel.mutualfundpartner.com/css/newassets/images/sol-0.png",
-      title: "All",
-    },
-    {
-      link: "https://ajaykumarvirsangbhaipatel.mutualfundpartner.com/images/mutualfundpartner-Tax-Savings.png",
-      title: "Tax Savings",
-    },
-    {
-      link: "https://ajaykumarvirsangbhaipatel.mutualfundpartner.com/images/mutualfundpartner-Basics-of-Mutual-Funds-.png",
-      title: "Basics of Mututal Funds",
-    },
-    {
-      link: "https://ajaykumarvirsangbhaipatel.mutualfundpartner.com/images/main-cat-61e90ffb375b9.png",
-      title: "Interesting Reads",
-    },
-    {
-      link: "https://ajaykumarvirsangbhaipatel.mutualfundpartner.com/images/mutualfundpartner-Wealth-Creation.png",
-      title: "Wealth Creation",
-    },
-    {
-      link: "https://ajaykumarvirsangbhaipatel.mutualfundpartner.com/images/main-cat-61cd444e5b6d5.png",
-      title: "Regular Income",
-    },
-    {
-      link: "https://ajaykumarvirsangbhaipatel.mutualfundpartner.com/images/mutualfundpartner-Children's-Future.png",
-      title: "Children's Future",
-    },
-    {
-      link: "https://ajaykumarvirsangbhaipatel.mutualfundpartner.com/images/mutualfundpartner-Retirement-Planning.png",
-      title: "Retirement Planning",
-    },
-  ];
+const Solutions = ({ onCategoryClick }) => {
+  const check = (e) => {
+    console.log(e.target.value, "jijijij");
+  };
 
   const formFields = [
     {
@@ -99,15 +68,6 @@ const Solutions = () => {
             }
           />
         </div>
-      </div>
-
-      <div className="mt-20 flex flex-wrap justify-center tab:flex-nowrap gap-8">
-        {solutionsCards.map((card, idx) => (
-          <div key={idx} className="flex flex-col items-center">
-            <img src={card.link} alt="" className="min-w-fit h-12" />
-            <h4 className="text-gray mt-2 text-center">{card.title}</h4>
-          </div>
-        ))}
       </div>
     </section>
   );
