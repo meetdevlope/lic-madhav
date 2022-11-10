@@ -19,6 +19,7 @@ const Header = () => {
           src="/images/madhav_lic_logo.png"
           alt="logo"
           className="h-full cursor-pointer"
+          onClick={() => router.push("/")}
         />
       </div>
       <div

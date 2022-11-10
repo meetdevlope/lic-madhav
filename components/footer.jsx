@@ -1,16 +1,20 @@
 import React from "react";
 import { FiInstagram, FiTwitter } from "react-icons/fi";
 import { FaFacebookF } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 const Footer = () => {
+  const router = useRouter();
+
   return (
-    <footer className="bg-brand px-10 pt-8 pb-4 tab:px-20 " >
+    <footer className="bg-brand px-10 pt-8 pb-4 tab:px-20 ">
       <div className="flex flex-col tab:flex-row justify-between items-center">
         <div className="h-16">
           <img
             src="/images/madhav_lic_logo_white.png"
             alt="logo"
             className="h-full cursor-pointer"
+            onClick={() => router.push("/")}
           />
         </div>
         <div className="text-white text-center flex flex-col tab:flex-row mt-8 gap-4 tab:my-0">
