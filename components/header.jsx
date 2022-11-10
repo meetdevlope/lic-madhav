@@ -4,12 +4,11 @@ import React, { useState } from "react";
 import ButtonComponent from "./buttonComponent";
 
 const Header = () => {
-
-  const [hamOpen, sethamOpen] = useState(false)
+  const [hamOpen, sethamOpen] = useState(false);
 
   const openHamburger = () => {
-    sethamOpen((prev) => (!prev))
-  }
+    sethamOpen((prev) => !prev);
+  };
 
   const router = useRouter();
 
@@ -36,6 +35,7 @@ const Header = () => {
       <div className="hidden tab:flex tab:justify-center tab:items-center tab:gap-8">
         <a onClick={() => router.push("/")}>Home</a>
         <a onClick={() => router.push("/lifeinsurance")}>Life Insurance</a>
+        <a onClick={() => router.push("/otherinsurance")}>Other Insurance</a>
         <a onClick={() => router.push("/insurance")}>Insurance</a>
         <a>Contact Us</a>
         <ButtonComponent appearance={"pri-out"} buttonText={"Know More"} />
