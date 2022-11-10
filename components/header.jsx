@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import ButtonComponent from "./buttonComponent";
+import Dropdown from "./dropdown";
 
 const Header = () => {
   const [hamOpen, sethamOpen] = useState(false);
@@ -35,14 +36,12 @@ const Header = () => {
 
       <div className="hidden tab:flex tab:justify-center tab:items-center tab:gap-8">
         <a onClick={() => router.push("/")}>Home</a>
-        <a onClick={() => router.push("/lifeinsurance")}>Life Insurance</a>
-        <a onClick={() => router.push("/otherinsurance")}>Other Insurance</a>
-        <a onClick={() => router.push("/insurance")}>Insurance</a>
+        <Dropdown />
         <a>Contact Us</a>
         <ButtonComponent appearance={"pri-out"} buttonText={"Know More"} />
       </div>
       <div
-        className={`black-backdrop bg-black opacity-80 fixed top-0 left-0 h-screen w-screen transition-all z-[5] ${
+        className={`black-backdrop bg-black opacity-80 fixed top-0 left-0 h-screen w-screen transition-all z-[5] tab:hidden ${
           hamOpen ? "block" : "hidden"
         }`}
       ></div>
@@ -53,7 +52,7 @@ const Header = () => {
       >
         <a>Home</a>
         <a href="/pages/insurance.jsx">Services</a>
-        <a>Insurance</a>
+        <Dropdown />
         <a>Contact Us</a>
         <ButtonComponent appearance={"pri-out"} buttonText={"Know More"} />
       </div>
