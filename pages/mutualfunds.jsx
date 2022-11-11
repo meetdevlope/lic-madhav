@@ -71,13 +71,10 @@ const MutualFunds = () => {
         ...prev,
         loading: false,
         error: false,
-        data: response?.data?.mutualFunds?.data[0]?.attributes,
+        data: response?.data?.mutualFunds?.data,
       }));
 
-      // console.log(
-      //   response?.data?.mutualFunds?.data[0]?.attributes,
-      //   "data here"
-      // );
+      console.log(response?.data?.mutualFunds?.data, "data here");
     } catch (error) {
       console.log("something went wrong", error);
       setData((prev) => ({ ...prev, loading: false, error: true, data: [] }));
@@ -103,35 +100,36 @@ const MutualFunds = () => {
     return category.filter((item) => item.category === selcted);
   };
 
-  // const filteredList = useMemo(getFilteredList, [selcted, category]);
+  const filteredList = useMemo(getFilteredList, [selcted, category]);
 
   return (
-    // <div>
-    //   <div className="flex justify-center mb-4 gap-4">
-    //     {buttonData.map((item, i) => (
-    //       <button
-    //         className={`p-4 hover:bg-brand/50 ${
-    //           selcted === item.title ? "bg-[red]" : " bg-brand"
-    //         }`}
-    //         onClick={() => setselcted(item.title)}
-    //         key={i}
-    //       >
-    //         {item.title}
-    //       </button>
-    //     ))}
-    //   </div>
-    //   <div>
-    //     {filteredList.map((item, i) => (
-    //       <p className="text-center text-lg" key={i}>
-    //         {item.title}
-    //       </p>
-    //     ))}
-    //   </div>
-    // </div>
-
-    <div className="max-w-7xl fonb-[#000]">
-      <ReactMarkDown>{data?.details}</ReactMarkDown>
+    <div>
+      <div className="flex justify-center mb-4 gap-4">
+        {buttonData.map((item, i) => (
+          <button
+            className={`p-4 hover:bg-brand/50 ${
+              selcted === item.title ? "bg-[red]" : " bg-brand"
+            }`}
+            onClick={() => setselcted(item.title)}
+            key={i}
+          >
+            {item.title}
+          </button>
+        ))}
+      </div>
+      <div>
+        {filteredList.map((item, i) => (
+          <p className="text-center text-lg" key={i}>
+            {item.title}
+          </p>
+        ))}
+      </div>
     </div>
+
+    // <div className="max-w-7xl fonb-[#000]">
+    //   <h4>{data?.title}</h4>
+    //   <ReactMarkDown>{data?.details}</ReactMarkDown>
+    // </div>
   );
 };
 
