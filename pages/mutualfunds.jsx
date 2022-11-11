@@ -11,50 +11,7 @@ const InitData = {
 };
 
 const MutualFunds = () => {
-  const buttonData = [
-    {
-      title: "1",
-    },
-    {
-      title: "2",
-    },
-    {
-      title: "3",
-    },
-    {
-      title: "4",
-    },
-    {
-      title: "5",
-    },
-  ];
-
-  const allCategories = [
-    {
-      title: "One",
-      category: "1",
-    },
-    {
-      title: "Two",
-      category: "2",
-    },
-    {
-      title: "Three",
-      category: "3",
-    },
-    {
-      title: "Four",
-      category: "4",
-    },
-    {
-      title: "Five",
-      category: "5",
-    },
-  ];
-
-  const [category, setcategory] = useState([]);
-
-  const [selcted, setselcted] = useState();
+  const [selcted, setselcted] = useState({});
 
   // console.log(selcted);
 
@@ -67,14 +24,18 @@ const MutualFunds = () => {
         query: allMututalFunds,
       });
 
+      // console.log(response.error);
+      // console.log(response.errors);
+
       setData((prev) => ({
         ...prev,
         loading: false,
         error: false,
         data: response?.data?.mutualFunds?.data,
       }));
-
-      console.log(response?.data?.mutualFunds?.data, "data here");
+      setselcted(response?.data?.mutualFunds?.data[0]);
+      // getFilteredList();
+      // console.log(response?.data?.mutualFunds?.data, "data here");
     } catch (error) {
       console.log("something went wrong", error);
       setData((prev) => ({ ...prev, loading: false, error: true, data: [] }));
@@ -83,8 +44,15 @@ const MutualFunds = () => {
 
   useEffect(() => {
     getData();
-    setcategory(allCategories);
   }, []);
+
+  const getFilteredList = (slug) => {
+    if (slug === undefined || slug == null) {
+      setselcted(data[0]);
+    } else {
+      setselcted(data.find((e) => e.attributes.Slug === slug));
+    }
+  };
 
   if (loading)
     return (
@@ -93,43 +61,31 @@ const MutualFunds = () => {
       </span>
     );
 
-  const getFilteredList = () => {
-    if (!selcted) {
-      setselcted("1");
-    }
-    return category.filter((item) => item.category === selcted);
-  };
-
-  const filteredList = useMemo(getFilteredList, [selcted, category]);
-
   return (
     <div>
       <div className="flex justify-center mb-4 gap-4">
-        {buttonData.map((item, i) => (
+        {data?.map((item, i) => (
           <button
-            className={`p-4 hover:bg-brand/50 ${
-              selcted === item.title ? "bg-[red]" : " bg-brand"
+            className={`hover:underline underline-offset-8 decoration-brand transition-all mt-20 mb-10 ${
+              selcted?.attributes?.Slug === item?.attributes?.Slug
+                ? "underline"
+                : null
             }`}
-            onClick={() => setselcted(item.title)}
+            onClick={() => {
+              getFilteredList(item?.attributes?.Slug);
+            }}
             key={i}
           >
-            {item.title}
+            {item?.attributes?.title}
           </button>
         ))}
       </div>
       <div>
-        {filteredList.map((item, i) => (
-          <p className="text-center text-lg" key={i}>
-            {item.title}
-          </p>
-        ))}
+        <ReactMarkDown className="text-center text-lg px-10 tab:px-20 mb-10">
+          {selcted?.attributes?.details}
+        </ReactMarkDown>
       </div>
     </div>
-
-    // <div className="max-w-7xl fonb-[#000]">
-    //   <h4>{data?.title}</h4>
-    //   <ReactMarkDown>{data?.details}</ReactMarkDown>
-    // </div>
   );
 };
 

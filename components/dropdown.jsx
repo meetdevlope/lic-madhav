@@ -35,20 +35,26 @@ const Dropdown = () => {
         />
       </button>
       <div
-        className={`absolute mt-4 p-3 rounded-md shadow-lg border bg-white z-10 ${
+        className={`absolute mt-4 p-3 rounded-md shadow-lg bg-white z-10 ${
           open ? "block" : "hidden"
         }`}
       >
         <a
+          href="/mutualfunds"
+          className="text-base font-medium block text-black/60 hover:text-brand-light"
+        >
+          Mutual Funds
+        </a>
+        <a
           href="/lifeinsurance"
-          className="text-base font-semibold text-black hover:text-brand-light"
+          className="text-base block mt-2 font-medium text-black/60 hover:text-brand-light"
         >
           Life Insurance
         </a>
         <div>
           <button
             onClick={() => setOpen2(!open2)}
-            className="flex mt-2 gap-2 justify-center items-center text-base text-black hover:text-brand-light"
+            className="flex mt-2 gap-2 justify-center font-medium items-center text-base text-black/60 hover:text-brand-light"
           >
             Other Insurance{" "}
             <AiFillCaretDown
@@ -56,19 +62,19 @@ const Dropdown = () => {
             />
           </button>
           <div
-            className={`absolute flex flex-col tab:left-full mt-4 p-3 rounded-md shadow-lg border bg-white z-10 ${
+            className={`absolute flex flex-col tab:left-full mt-4 p-3 rounded-md shadow-lg bg-white z-10 ${
               open2 ? "block" : "hidden"
             }`}
           >
             <a
               href="/otherinsurance/auto-insurance"
-              className="text-base font-medium text-black hover:text-brand-light"
+              className="text-base font-medium text-black/60 font-medium hover:text-brand-light"
             >
               Auto&nbsp;Insurance
             </a>
             <a
               href="/otherinsurance/health-insurance"
-              className="text-base font-medium text-black hover:text-brand-light"
+              className="text-base font-medium text-black/60 hover:text-brand-light"
             >
               Health&nbsp;Insurance
             </a>
