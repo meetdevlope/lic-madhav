@@ -3,7 +3,8 @@ import Link from "next/link";
 import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
-const CardLifeInsurance = ({ title, imgSrc, plans }) => {
+const CardLifeInsurance = ({ title, imgSrc, plans, link, type }) => {
+  console.log(type, "check type");
   // console.log(plans.length === 0, "plans");
   return (
     <div className="p-4 m-4 bg-gray/20 rounded-md w-full lg:w-1/5 md:w-1/4 sm:w-1/3">
@@ -11,7 +12,7 @@ const CardLifeInsurance = ({ title, imgSrc, plans }) => {
         <img src={imgSrc} className="max-w-full" />
       </div>
       <div className="px-4">
-        <h4 className="mt-4 text-lg mb-2 capitalize">{title}</h4>
+        <h4 className="mt-4 text-lg mb-2 text-left capitalize">{title}</h4>
 
         {plans && plans?.length === 0 ? (
           <h5 className="mt-4 mb-1 font-bold">
@@ -31,6 +32,15 @@ const CardLifeInsurance = ({ title, imgSrc, plans }) => {
               </Link>
             ))}
         </div>
+
+        {link && type === "auto-insurance" && (
+          // <h5>Hello</h5>
+          <a href={`/otherinsurance/auto-insurance/${link}`}>View Details</a>
+        )}
+        {link && type === "health-insurance" && (
+          // <h5>Hi</h5>
+          <a href={`/otherinsurance/health-insurance/${link}`}>View Details</a>
+        )}
         {/* <p>{plans}</p> */}
       </div>
     </div>

@@ -1,9 +1,10 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import client from "../../functions/apolloClient";
-import { singlePlan } from "../../functions/lic/singlePlan";
 import { ClipLoader } from "react-spinners";
-import ButtonComponent from "../../components/buttonComponent";
+import client from "../functions/apolloClient";
+import { filterAutoInsurance } from "../functions/autoInsurance/filterInsurance";
+import { filterHealthInsurance } from "../functions/healthInsurance/filterInsurance";
+import ButtonComponent from "./buttonComponent";
 
 const InitData = {
   loading: false,
@@ -11,12 +12,20 @@ const InitData = {
   data: {},
 };
 
-const IndividualPage = () => {
+const OtherInsuranceDetails = () => {
   const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
 
   const router = useRouter();
-  // console.log(router?.query?.id, "router");
-  const id = router?.query?.id;
+  const slug = router?.query?.id;
+  //   console.log(slug[1], "slug");
+  let query;
+  if (slug[0] === "auto-insurance") {
+    query = filterAutoInsurance(slug.length > 1 && slug[1]);
+  }
+
+  if (slug[0] === "health-insurance") {
+    query = filterHealthInsurance(slug.length > 1 && slug[1]);
+  }
 
   const [{ loading, error, data }, setData] = useState(InitData);
 
@@ -25,16 +34,33 @@ const IndividualPage = () => {
     // console.log(loading);
     try {
       const response = await client().query({
-        query: singlePlan(id),
+        query: query,
       });
-      setData((prev) => ({
-        ...prev,
-        loading: false,
-        error: false,
-        data: response?.data?.licPlan?.data?.attributes,
-      }));
+
+      slug[0] === "auto-insurance" &&
+        setData((prev) => ({
+          ...prev,
+          loading: false,
+          error: false,
+          data: response?.data?.autoInsurances?.data[0]?.attributes,
+        }));
+
+      slug[0] === "health-insurance" &&
+        setData((prev) => ({
+          ...prev,
+          loading: false,
+          error: false,
+          data: response?.data?.healthInsurances?.data[0]?.attributes,
+        }));
       //   setPlanData(response?.data?.licPlan?.data?.attributes);
-      console.log(response?.data?.licPlan?.data?.attributes, "data here");
+      console.log(
+        response?.data?.autoInsurances?.data[0]?.attributes,
+        "data here"
+      );
+      console.log(
+        response?.data?.healthInsurances?.data[0]?.attributes,
+        "data here"
+      );
     } catch (error) {
       console.log(error);
       setData((prev) => ({ ...prev, loading: false, error: true, data: {} }));
@@ -56,14 +82,14 @@ const IndividualPage = () => {
   return (
     <div className="w-auto max-w-7xl mx-4 xl:mx-auto">
       {data?.cover_image?.data && (
-        <div className="h-[30vh] my-10 overflow-hidden flex items-center">
+        <div className="h-[30vh] my-10 overflow-hidden flex justify-center items-center">
           <img
             src={`${serverLink}${data?.cover_image?.data?.attributes?.url}`}
             alt=""
           />
         </div>
       )}
-      <h3>{data?.name}</h3>
+      <h3>{data?.company_name}</h3>
       <div className="flex items-center flex-col lg:flex-row">
         <p className="flex-1">{data?.description}</p>
         {data?.image?.data && (
@@ -77,31 +103,25 @@ const IndividualPage = () => {
         )}
       </div>
 
-      {data?.document?.data && (
-        <div className="flex justify-center my-2 lg:my-8">
-          <div className="w-[70vw] lg:w-[50vw] max-w-3xl">
-            <img
-              className="w-full"
-              src={`${serverLink}${data?.document?.data?.attributes?.url}`}
-              alt=""
-            />
-          </div>
-        </div>
-      )}
-
       <div className="flex items-center flex-col md:flex-row justify-center gap-4 my-4">
-        <ButtonComponent
-          appearance={"pri-out"}
-          buttonText={`Go Back`}
-          onClick={() => router.push("/lifeinsurance")}
-        />
+        {slug[0] === "auto-insurance" && (
+          <ButtonComponent
+            appearance={"pri-out"}
+            buttonText={`Go Back`}
+            onClick={() => router.push(`/otherinsurance/auto-insurance`)}
+          />
+        )}
+
+        {slug[0] === "health-insurance" && (
+          <ButtonComponent
+            appearance={"pri-out"}
+            buttonText={`Go Back`}
+            onClick={() => router.push(`/otherinsurance/health-insurance`)}
+          />
+        )}
 
         {data?.brochure?.data && (
-          <a
-            href={`${serverLink}${data?.brochure?.data?.attributes?.url}`}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={`#`} target="_blank" rel="noreferrer">
             <ButtonComponent
               appearance={"pri"}
               buttonText={`Download Brochure`}
@@ -113,4 +133,6 @@ const IndividualPage = () => {
   );
 };
 
-export default IndividualPage;
+export default OtherInsuranceDetails;
+
+// filterInsurance

@@ -1,10 +1,10 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client/core";
 
-const key = process.env.NEXT_PUBLIC_SERVER_LINK
+const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
 
 
 const client = () => new ApolloClient({
-    uri: key + '/graphql',
+    uri: `${serverLink}/graphql`,
     cache: new InMemoryCache(),
 });
 

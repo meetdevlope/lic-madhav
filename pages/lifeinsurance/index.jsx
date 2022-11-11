@@ -11,6 +11,7 @@ const InitData = {
 };
 
 const Index = () => {
+  const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
   const [{ loading, error, data }, setData] = useState(InitData);
 
   const getData = async () => {
@@ -59,7 +60,7 @@ const Index = () => {
             <CardLifeInsurance
               key={i}
               title={item?.attributes?.name}
-              imgSrc={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.url}`}
+              imgSrc={`${serverLink}${item?.attributes?.image?.data?.attributes?.url}`}
               plans={item?.attributes?.lic_plans?.data}
             />
           ))}

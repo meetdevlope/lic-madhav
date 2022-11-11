@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 
@@ -38,13 +39,16 @@ const Dropdown = () => {
           open ? "block" : "hidden"
         }`}
       >
-        <p className="text-base font-medium text-black hover:text-brand-light">
+        <a
+          href="/lifeinsurance"
+          className="text-base font-semibold text-black hover:text-brand-light"
+        >
           Life Insurance
-        </p>
+        </a>
         <div>
           <button
             onClick={() => setOpen2(!open2)}
-            className="flex mt-2 gap-2 justify-center items-center text-base font-medium text-black hover:text-brand-light"
+            className="flex mt-2 gap-2 justify-center items-center text-base text-black hover:text-brand-light"
           >
             Other Insurance{" "}
             <AiFillCaretDown
@@ -52,13 +56,22 @@ const Dropdown = () => {
             />
           </button>
           <div
-            className={`absolute right-0 mt-4 p-3 rounded-md shadow-lg border bg-white z-10 ${
+            className={`absolute flex flex-col tab:left-full mt-4 p-3 rounded-md shadow-lg border bg-white z-10 ${
               open2 ? "block" : "hidden"
             }`}
           >
-            <p className="text-base font-medium text-black hover:text-brand-light">
-              Insurance&nbsp;Life
-            </p>
+            <a
+              href="/otherinsurance/auto-insurance"
+              className="text-base font-medium text-black hover:text-brand-light"
+            >
+              Auto&nbsp;Insurance
+            </a>
+            <a
+              href="/otherinsurance/health-insurance"
+              className="text-base font-medium text-black hover:text-brand-light"
+            >
+              Health&nbsp;Insurance
+            </a>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import CardLifeInsurance from "./cardLifeInsurance";
 import { ClipLoader } from "react-spinners";
 import client from "../functions/apolloClient";
 import { allAutoInsurance } from "../functions/autoInsurance/all";
+import { allHealthInsurance } from "../functions/healthInsurance/all";
 
 const InitData = {
   loading: false,
@@ -11,24 +12,47 @@ const InitData = {
 };
 
 const OtherInsuranceCard = ({ type }) => {
-  console.log(type === "health-insurance", "id");
+  const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
+
+  console.log(type, "type");
 
   const [{ loading, error, data }, setData] = useState(InitData);
+  let query;
+  // (type === "auto-insurance" && query = allAutoInsurance)
+
+  if (type === "auto-insurance") {
+    query = allAutoInsurance;
+  }
+  if (type === "health-insurance") {
+    query = allHealthInsurance;
+  }
+
+  // type === "health-insurance" && query =allHealthInsurance
 
   const getData = async () => {
     setData((prev) => ({ ...prev, loading: true, error: false }));
     try {
       const response = await client().query({
-        query: allAutoInsurance,
+        query: query,
       });
 
-      setData((prev) => ({
-        ...prev,
-        loading: false,
-        error: false,
-        data: response?.data?.autoInsurances?.data,
-      }));
+      type === "auto-insurance" &&
+        setData((prev) => ({
+          ...prev,
+          loading: false,
+          error: false,
+          data: response?.data?.autoInsurances?.data,
+        }));
 
+      type === "health-insurance" &&
+        setData((prev) => ({
+          ...prev,
+          loading: false,
+          error: false,
+          data: response?.data?.healthInsurances?.data,
+        }));
+
+      console.log(response?.data?.healthInsurances?.data, "data here");
       console.log(response?.data?.autoInsurances?.data, "data here");
     } catch (error) {
       console.log("something went wrong", error);
@@ -54,9 +78,11 @@ const OtherInsuranceCard = ({ type }) => {
           (item, i) => (
             <CardLifeInsurance
               key={i}
+              type={type}
               title={item?.attributes?.company_name}
-              imgSrc={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.url}`}
+              imgSrc={`${serverLink}${item?.attributes?.image?.data?.attributes?.url}`}
               // plans={item?.attributes?.lic_plans?.data}
+              link={item?.attributes?.Slug}
             />
           )
           // console.log(item, "individual data")
