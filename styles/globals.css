@@ -68,7 +68,7 @@
   border-radius: 3px;
   height: 8px;
   background: #000;
-  transition: all .3s;
+  transition: all 0.3s;
   position: relative;
 }
 
@@ -78,27 +78,27 @@
 }
 
 .active .hml-1 {
-  animation: ease .5s top forwards;
+  animation: ease 0.5s top forwards;
 }
 
 .not-active .hml-1 {
-  animation: ease .5s top-2 forwards;
+  animation: ease 0.5s top-2 forwards;
 }
 
 .active .hml-2 {
-  animation: ease .5s scaled forwards;
+  animation: ease 0.5s scaled forwards;
 }
 
 .not-active .hml-2 {
-  animation: ease .5s scaled-2 forwards;
+  animation: ease 0.5s scaled-2 forwards;
 }
 
 .active .hml-3 {
-  animation: ease .5s bottom forwards;
+  animation: ease 0.5s bottom forwards;
 }
 
 .not-active .hml-3 {
-  animation: ease .5s bottom-2 forwards;
+  animation: ease 0.5s bottom-2 forwards;
 }
 
 @keyframes top {
@@ -193,6 +193,9 @@
   }
 }
 
-
-
 /* HAMBURGER ANIMATION */
+
+.slick-list {
+  width: 90%;
+  margin: auto;
+}

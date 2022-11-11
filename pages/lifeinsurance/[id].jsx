@@ -11,12 +11,12 @@ const InitData = {
   data: {},
 };
 
-const IndividualPage = () => {
+const IndividualPage = ({ id }) => {
   const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
 
   const router = useRouter();
   // console.log(router?.query?.id, "router");
-  const id = router?.query?.id;
+  // const id = router?.?.id;
 
   const [{ loading, error, data }, setData] = useState(InitData);
 
@@ -56,10 +56,10 @@ const IndividualPage = () => {
   return (
     <div className="w-auto max-w-7xl mx-4 xl:mx-auto">
       {data?.cover_image?.data && (
-        <div className="h-[30vh] my-10 overflow-hidden flex items-center">
+        <div className="h-[30vh] my-10 relative overflow-hidden flex items-center">
           <img
             src={`${serverLink}${data?.cover_image?.data?.attributes?.url}`}
-            alt=""
+            alt="plan_cover_image"
           />
         </div>
       )}
@@ -114,3 +114,12 @@ const IndividualPage = () => {
 };
 
 export default IndividualPage;
+
+export const getServerSideProps = async (req) => {
+  // console.log(req.params, "params");
+  return {
+    props: {
+      id: req.params.id,
+    },
+  };
+};

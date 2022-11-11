@@ -4,11 +4,11 @@ import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 const CardLifeInsurance = ({ title, imgSrc, plans, link, type }) => {
-  console.log(type, "check type");
+  // console.log(type, "check type");
   // console.log(plans.length === 0, "plans");
   return (
     <div className="p-4 m-4 bg-gray/20 rounded-md w-full lg:w-1/5 md:w-1/4 sm:w-1/3">
-      <div className="img-wrapper overflow-hidden rounded-lg ">
+      <div className="img-wrapper overflow-hidden flex justify-center rounded-lg ">
         <img src={imgSrc} className="max-w-full" />
       </div>
       <div className="px-4">
