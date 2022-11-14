@@ -15,7 +15,6 @@ function Home() {
       <ExperienceSection />
       <PoliciesSection />
       <TestimonialSlider />
-      <ContactUsSection />
       <FeaturedSection />
     </main>
   );

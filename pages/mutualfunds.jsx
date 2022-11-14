@@ -63,7 +63,9 @@ const MutualFunds = () => {
 
   return (
     <div>
-      <div className="flex justify-center mb-4 gap-4">
+      <h3 className="text-center mt-10">Mutual Funds</h3>
+
+      <div className="flex justify-center mb-4 gap-8">
         {data?.map((item, i) => (
           <button
             className={`hover:underline underline-offset-8 decoration-brand transition-all mt-20 mb-10 ${
@@ -80,8 +82,8 @@ const MutualFunds = () => {
           </button>
         ))}
       </div>
-      <div>
-        <ReactMarkDown className="text-center text-lg px-10 tab:px-20 mb-10">
+      <div className="markdown">
+        <ReactMarkDown className="text-lg px-10 tab:px-20 mb-10">
           {selcted?.attributes?.details}
         </ReactMarkDown>
       </div>

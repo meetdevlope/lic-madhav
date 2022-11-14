@@ -1,18 +1,17 @@
-import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import client from "../../functions/apolloClient";
-import { singlePlan } from "../../functions/lic/singlePlan";
+import InsuranceDetailsComp from "../components/insuranceDetailsComp";
 import { ClipLoader } from "react-spinners";
-import ButtonComponent from "../../components/buttonComponent";
-import InsuranceDetailsComp from "../../components/insuranceDetailsComp";
+import { useRouter } from "next/router";
+import client from "../functions/apolloClient";
+import { allClia } from "../functions/clia";
+import ButtonComponent from "../components/buttonComponent";
 
-const InitData = {
-  loading: false,
-  error: false,
-  data: {},
-};
-
-const IndividualPage = ({ id }) => {
+const Clia = () => {
+  const InitData = {
+    loading: "",
+    error: "",
+    data: [],
+  };
   const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
 
   const router = useRouter();
@@ -26,16 +25,16 @@ const IndividualPage = ({ id }) => {
     // console.log(loading);
     try {
       const response = await client().query({
-        query: singlePlan(id),
+        query: allClia,
       });
       setData((prev) => ({
         ...prev,
         loading: false,
         error: false,
-        data: response?.data?.licPlan?.data?.attributes,
+        data: response?.data?.clias?.data[0]?.attributes,
       }));
       //   setPlanData(response?.data?.licPlan?.data?.attributes);
-      console.log(response?.data?.licPlan?.data?.attributes, "data here");
+      //   console.log(response?.data?.clias?.data[0]?.attributes, "data here");
     } catch (error) {
       console.log(error);
       setData((prev) => ({ ...prev, loading: false, error: true, data: {} }));
@@ -57,43 +56,20 @@ const IndividualPage = ({ id }) => {
   return (
     <InsuranceDetailsComp
       coverImage={`${serverLink}${data?.cover_image?.data?.attributes?.url}`}
-      title={data?.name}
+      title={data?.title}
       description={data?.description}
       mainImage={`${serverLink}${data?.image?.data?.attributes?.url}`}
-      documentImage={`${serverLink}${data?.document?.data?.attributes?.url}`}
       action={() => (
         <div className="flex items-center flex-col md:flex-row justify-center gap-4 my-4">
           <ButtonComponent
             appearance={"pri-out"}
-            buttonText={`Go Back`}
-            onClick={() => router.push("/lifeinsurance")}
+            buttonText={`Go Home`}
+            onClick={() => router.push("/")}
           />
-
-          {data?.brochure?.data && (
-            <a
-              href={`${serverLink}${data?.brochure?.data?.attributes?.url}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <ButtonComponent
-                appearance={"pri"}
-                buttonText={`Download Brochure`}
-              />
-            </a>
-          )}
         </div>
       )}
     />
   );
 };
 
-export default IndividualPage;
-
-export const getServerSideProps = async (req) => {
-  // console.log(req.params, "params");
-  return {
-    props: {
-      id: req.params.id,
-    },
-  };
-};
+export default Clia;

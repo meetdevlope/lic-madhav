@@ -73,6 +73,12 @@ const OtherInsuranceCard = ({ type }) => {
 
   return (
     <div>
+      {type === "auto-insurance" && (
+        <h3 className="text-center mt-10">Auto Insurance</h3>
+      )}
+      {type === "health-insurance" && (
+        <h3 className="text-center mt-10">Health Insurance</h3>
+      )}
       <div className="flex justify-center gap-4 my-10 flex-wrap">
         {data?.map(
           (item, i) => (

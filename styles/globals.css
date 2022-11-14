@@ -193,6 +193,28 @@
   }
 }
 
+.markdown li {
+  font-size: 16px;
+}
+
+.markdown li {
+  list-style: circle;
+  color: #000;
+  /* margin: rem; */
+}
+
+ul li p strong,
+p strong {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+ul li p,
+.markdown p {
+  font-size: 14px;
+  color: #000;
+}
+
 /* HAMBURGER ANIMATION */
 
 .slick-list {
@@ -202,26 +224,25 @@
 
 /* HAMBURGER ANIMATION */
 .parent {
-	display: block;
-	position: relative;
-	float: left;
+  display: block;
+  position: relative;
+  float: left;
   border-radius: 4px;
 }
 
-
 .parent a {
-	color: black;
-	text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
-.parent:hover>ul {
-	display: block;
-	position: absolute;
+.parent:hover > ul {
+  display: block;
+  position: absolute;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
 }
 
 .child {
-	display: none;
+  display: none;
 }
 
 .child li {
@@ -230,16 +251,14 @@
 }
 
 .child li a {
-	color: #0000006f;
+  color: #0000006f;
   width: 100%;
 }
 .child li a:hover {
-	color: #339ac0;
+  color: #339ac0;
 }
-
 
 ul ul ul {
-	left: 100%;
-	top: 0;
+  left: 100%;
+  top: 0;
 }
-

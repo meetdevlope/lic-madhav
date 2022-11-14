@@ -2,6 +2,7 @@ import { Formik, Form } from "formik";
 import React from "react";
 import { MdCall, MdEmail, MdLocationPin } from "react-icons/md";
 import ButtonComponent from "./buttonComponent";
+import * as Yup from "yup";
 
 const ContactUsSection = () => {
   const contactOptions = [
@@ -19,12 +20,18 @@ const ContactUsSection = () => {
     },
   ];
 
+  const contactUsValidation = Yup.object({
+    firstName: Yup.string().required("Required"),
+    lastName: Yup.string().required("Required"),
+    email: Yup.string().email("Email is not valid").required("Required"),
+  });
+
   const onSubmit = (values) => {
     console.log(values);
   };
 
   return (
-    <section className="bg-brand flex flex-col gap-2 tab:flex-row py-16">
+    <section className="flex flex-col gap-2 w-full tab:flex-row py-16">
       <div className="flex-1">
         <h3 className="text-white">Contact Us</h3>
 
@@ -55,8 +62,9 @@ const ContactUsSection = () => {
         <Formik
           onSubmit={onSubmit}
           initialValues={{ firstName: "", lastName: "", email: "" }}
+          validationSchema={contactUsValidation}
         >
-          {({ values, handleChange }) => (
+          {({ values, handleChange, errors, touched }) => (
             <Form className="flex flex-col gap-6 ">
               <div className="flex flex-col">
                 <label htmlFor="firstName">First Name</label>
@@ -69,9 +77,12 @@ const ContactUsSection = () => {
                   }}
                   className="border-b bg-[transparent] focus:outline-none"
                 />
+                {errors.firstName && touched.firstName && (
+                  <p className="text-black">{errors.firstName}</p>
+                )}
               </div>
               <div className="flex flex-col">
-                <label htmlFor="firstName">Last Name</label>
+                <label htmlFor="lastName">Last Name</label>
                 <input
                   type="text"
                   name="lastName"
@@ -81,9 +92,12 @@ const ContactUsSection = () => {
                   }}
                   className="border-b bg-[transparent] focus:outline-none"
                 />
+                {errors.lastName && touched.lastName && (
+                  <p className="text-black">{errors.lastName}</p>
+                )}
               </div>
               <div className="flex flex-col">
-                <label htmlFor="firstName">Email</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -93,6 +107,9 @@ const ContactUsSection = () => {
                   }}
                   className="border-b bg-[transparent] focus:outline-none"
                 />
+                {errors.email && touched.email && (
+                  <p className="text-black">{errors.email}</p>
+                )}
               </div>
               <ButtonComponent
                 buttonText={"Submit"}
