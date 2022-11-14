@@ -64,26 +64,6 @@ const Index = () => {
               plans={item?.attributes?.lic_plans?.data}
             />
           ))}
-          {/* <CardLifeInsurance
-            title="Child Protection Plans"
-            imgSrc="https://images.unsplash.com/photo-1667847941857-fa1b0d371445?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1049&q=80"
-            plans="New Children’s Money Back Plan"
-          />
-          <CardLifeInsurance
-            title="Child Protection Plans"
-            imgSrc="https://images.unsplash.com/photo-1667847941857-fa1b0d371445?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1049&q=80"
-            plans="New Children’s Money Back Plan"
-          />
-          <CardLifeInsurance
-            title="Child Protection Plans"
-            imgSrc="https://images.unsplash.com/photo-1667847941857-fa1b0d371445?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1049&q=80"
-            plans="New Children’s Money Back Plan"
-          />
-          <CardLifeInsurance
-            title="Child Protection Plans"
-            imgSrc="https://images.unsplash.com/photo-1667847941857-fa1b0d371445?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1049&q=80"
-            plans="New Children’s Money Back Plan"
-          /> */}
         </div>
       </div>
     </div>

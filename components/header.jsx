@@ -36,9 +36,10 @@ const Header = () => {
 
       <div className="hidden tab:flex tab:justify-center tab:items-center tab:gap-8">
         <a onClick={() => router.push("/")}>Home</a>
+        <a onClick={() => router.push("/")}>Know&nbsp;Us</a>
         <Dropdown />
-        <a>Contact Us</a>
-        <ButtonComponent appearance={"pri-out"} buttonText={"Know More"} />
+        <a>NRI&nbsp;Insurance</a>
+        <a>Contact&nbsp;Us</a>
       </div>
       <div
         className={`black-backdrop bg-black opacity-80 fixed top-0 left-0 h-screen w-screen transition-all z-[5] tab:hidden ${
@@ -52,7 +53,6 @@ const Header = () => {
       >
         <a>Home</a>
         <a href="/pages/insurance.jsx">Services</a>
-        <Dropdown />
         <a>Contact Us</a>
         <ButtonComponent appearance={"pri-out"} buttonText={"Know More"} />
       </div>

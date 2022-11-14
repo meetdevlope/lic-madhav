@@ -1,87 +1,51 @@
 import Link from "next/link";
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 
 const Dropdown = () => {
-  const ref = useRef();
-
-  const [open, setOpen] = useState(false);
-  const [open2, setOpen2] = useState(false);
-
-  useEffect(() => {
-    const clickOutsideHandler = (e) => {
-      if (!ref.current?.contains(e.target)) {
-        setOpen(false);
-        setOpen2(false);
-        // openHam;
-      }
-    };
-    document.addEventListener("mousedown", clickOutsideHandler);
-
-    return () => {
-      document.removeEventListener("mousedown", clickOutsideHandler);
-    };
-  }, [open]);
-
   return (
-    <div className="ref" ref={ref}>
-      <button
-        onClick={() => setOpen(!open)}
-        className={`relative flex gap-2 justify-center items-center text-black hover:text-brand-light`}
-      >
-        Insurance
-        <AiFillCaretDown
-          className={` transition-all ${open ? "rotate-180" : null}`}
-        />
-      </button>
-      <div
-        className={`absolute mt-4 p-3 rounded-md shadow-lg bg-white z-10 ${
-          open ? "block" : "hidden"
-        }`}
-      >
+    <ul id="menu" className="z-50">
+      <li className="parent">
         <a
-          href="/mutualfunds"
-          className="text-base font-medium block text-black/60 hover:text-brand-light"
+          href="#"
+          className="hover:text-brand-light flex items-center justify-center gap-2"
         >
-          Mutual Funds
+          Our&nbsp;Services
+          <span>
+            <AiFillCaretDown />
+          </span>
         </a>
-        <a
-          href="/lifeinsurance"
-          className="text-base block mt-2 font-medium text-black/60 hover:text-brand-light"
-        >
-          Life Insurance
-        </a>
-        <div>
-          <button
-            onClick={() => setOpen2(!open2)}
-            className="flex mt-2 gap-2 justify-center font-medium items-center text-base text-black/60 hover:text-brand-light"
-          >
-            Other Insurance{" "}
-            <AiFillCaretDown
-              className={` transition-all ${open2 ? "rotate-180" : null}`}
-            />
-          </button>
-          <div
-            className={`absolute flex flex-col tab:left-full mt-4 p-3 rounded-md shadow-lg bg-white z-10 ${
-              open2 ? "block" : "hidden"
-            }`}
-          >
-            <a
-              href="/otherinsurance/auto-insurance"
-              className="text-base font-medium text-black/60 font-medium hover:text-brand-light"
-            >
-              Auto&nbsp;Insurance
+        <ul className="child z-50 pt-4">
+          <li>
+            <a href="/lifeinsurance">Insurance</a>
+          </li>
+          <li>
+            <a href="/mutualfunds">Mutual&nbsp;Funds</a>
+          </li>
+          <li>
+            <a href="#">CLIA</a>
+          </li>
+          <li className="parent !rounded-t-none z-[50]">
+            <a href="#" className="flex justify-center items-center gap-2">
+              General&nbsp;Insurance
+              <span>
+                <AiFillCaretDown />
+              </span>
             </a>
-            <a
-              href="/otherinsurance/health-insurance"
-              className="text-base font-medium text-black/60 hover:text-brand-light"
-            >
-              Health&nbsp;Insurance
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+            <ul className="child [&>li>a]:px-2 pl-1 !rounded-lg overflow-hidden">
+              <li>
+                <a href="/otherinsurance/auto-insurance">Auto&nbsp;Insurance</a>
+              </li>
+              <li>
+                <a href="/otherinsurance/health-insurance">
+                  Health&nbsp;Insurance
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
   );
 };
 

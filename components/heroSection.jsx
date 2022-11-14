@@ -20,7 +20,7 @@ const HeroSection = () => {
             <ButtonComponent appearance={"pri-out"} buttonText={`Know More`} />
           </div>
         </div>
-        <div className="relative basis-[500px] aspect-h-image h-auto rounded-3xl overflow-hidden">
+        <div className="relative basis-[500px] aspect-h-image h-auto rounded-3xl overflow-hidden z-0">
           <Image
             priority
             src="https://i.ibb.co/tZKng9L/portrait.png"

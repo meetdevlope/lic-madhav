@@ -8,8 +8,11 @@ const CardLifeInsurance = ({ title, imgSrc, plans, link, type }) => {
   // console.log(plans.length === 0, "plans");
   return (
     <div className="p-4 m-4 bg-gray/20 rounded-md w-full lg:w-1/5 md:w-1/4 sm:w-1/3">
-      <div className="img-wrapper overflow-hidden flex justify-center rounded-lg ">
-        <img src={imgSrc} className="max-w-full" />
+      <div className="img-wrapper overflow-hidden rounded-lg ">
+        <img
+          src={imgSrc}
+          className="h-[20vh] w-full object-center object-cover"
+        />
       </div>
       <div className="px-4">
         <h4 className="mt-4 text-lg mb-2 text-left capitalize">{title}</h4>
