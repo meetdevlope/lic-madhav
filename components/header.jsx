@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import ButtonComponent from "./buttonComponent";
 import Dropdown from "./dropdown";
+import KnowUsDropdown from "./knowUsDropDown";
 
 const Header = () => {
   const [hamOpen, sethamOpen] = useState(false);
@@ -36,7 +37,7 @@ const Header = () => {
 
       <div className="hidden tab:flex tab:justify-center tab:items-center tab:gap-8">
         <a onClick={() => router.push("/")}>Home</a>
-        <a onClick={() => router.push("/")}>Know&nbsp;Us</a>
+        <KnowUsDropdown />
         <Dropdown />
         <a>NRI&nbsp;Insurance</a>
         <a onClick={() => router.push("/contact-us")}>Contact&nbsp;Us</a>
@@ -51,10 +52,11 @@ const Header = () => {
           hamOpen ? "translate-x-0" : "translate-x-full"
         } `}
       >
-        <a>Home</a>
-        <a href="/pages/insurance.jsx">Services</a>
-        <a>Contact Us</a>
-        <ButtonComponent appearance={"pri-out"} buttonText={"Know More"} />
+        <a onClick={() => router.push("/")}>Home</a>
+        <a onClick={() => router.push("/")}>Know&nbsp;Us</a>
+        <Dropdown />
+        <a>NRI&nbsp;Insurance</a>
+        <a>Contact&nbsp;Us</a>
       </div>
     </header>
   );

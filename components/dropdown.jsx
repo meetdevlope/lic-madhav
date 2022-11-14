@@ -14,15 +14,24 @@ const Dropdown = () => {
             <AiFillCaretDown />
           </span>
         </a>
-        <ul className="child z-50 pt-4">
-          <li>
-            <a onClick={() => router.push("/lifeinsurance")}>Insurance</a>
+        <ul className="child z-50 pt-2 [&>li>a]:px-1">
+          <li
+            onClick={() => router.push("/lifeinsurance")}
+            className="[&>*]:hover:text-brand-light cursor-pointer"
+          >
+            <a>Insurance</a>
           </li>
-          <li>
-            <a onClick={() => router.push("/mutualfunds")}>Mutual&nbsp;Funds</a>
+          <li
+            onClick={() => router.push("/mutualfunds")}
+            className="[&>*]:hover:text-brand-light cursor-pointer"
+          >
+            <a>Mutual&nbsp;Funds</a>
           </li>
-          <li>
-            <a onClick={() => router.push("/clia")}>CLIA</a>
+          <li
+            onClick={() => router.push("/clia")}
+            className="[&>*]:hover:text-brand-light cursor-pointer"
+          >
+            <a>CLIA</a>
           </li>
           <li className="parent !rounded-t-none z-[50]">
             <a className="flex justify-center items-center gap-2">
@@ -32,7 +41,7 @@ const Dropdown = () => {
               </span>
             </a>
             <ul className="child [&>li>a]:px-2 pl-1 !rounded-lg overflow-hidden">
-              <li>
+              <li className="cursor-pointer [&>*]:hover:text-brand-light">
                 <a
                   href="/otherinsurance/auto-insurance"
                   // onClick={() => router.push("/otherinsurance/auto-insurance")}
@@ -40,13 +49,11 @@ const Dropdown = () => {
                   Auto&nbsp;Insurance
                 </a>
               </li>
-              <li>
-                <a
-                  href="/otherinsurance/health-insurance"
-                  onClick={() =>
-                    router.push("/otherinsurance/health-insurance")
-                  }
-                >
+              <li
+                className="cursor-pointer [&>*]:hover:text-brand-light"
+                onClick={() => router.push("/otherinsurance/health-insurance")}
+              >
+                <a href="/otherinsurance/health-insurance">
                   Health&nbsp;Insurance
                 </a>
               </li>

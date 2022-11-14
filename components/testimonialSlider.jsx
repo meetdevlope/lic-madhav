@@ -100,7 +100,7 @@ const TestimonialSlider = () => {
           Testimonials
         </h3>
         <div className="Testi-slider-SR w-full mx-auto">
-          <Slider {...settings}>
+          {/* <Slider {...settings}>
             {data &&
               data?.map((element, idx) => (
                 <div key={idx}>
@@ -130,7 +130,7 @@ const TestimonialSlider = () => {
                   </div>
                 </div>
               ))}
-          </Slider>
+          </Slider> */}
         </div>
       </div>
     </>

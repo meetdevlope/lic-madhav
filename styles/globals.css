@@ -246,12 +246,14 @@ ul li p,
 }
 
 .child li {
-  padding: 4px !important;
   background-color: white;
+  padding: 4px;
 }
 
 .child li a {
   color: #0000006f;
+  padding-inline: 10px;
+
   width: 100%;
 }
 .child li a:hover {
@@ -261,4 +263,12 @@ ul li p,
 ul ul ul {
   left: 100%;
   top: 0;
+}
+
+
+.shd {
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+}
+ img {
+  margin: auto;
 }

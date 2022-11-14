@@ -3,6 +3,7 @@ import CardLifeInsurance from "../../components/cardLifeInsurance";
 import client from "../../functions/apolloClient";
 import { allLICCategories } from "../../functions/lic/all";
 import { ClipLoader } from "react-spinners";
+import PhotoGallery from "../../components/photoGallery";
 
 const InitData = {
   loading: false,
@@ -66,6 +67,7 @@ const Index = () => {
           ))}
         </div>
       </div>
+      <PhotoGallery />
     </div>
   );
 };
