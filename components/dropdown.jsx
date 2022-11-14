@@ -61,20 +61,20 @@ const Dropdown = () => {
               } `}
             >
               <li className="cursor-pointer [&>*]:hover:text-brand-light">
-                <a
+                <Link
                   href="/otherinsurance/auto-insurance"
                   // onClick={() => router.push("/otherinsurance/auto-insurance")}
                 >
                   Auto&nbsp;Insurance
-                </a>
+                </Link>
               </li>
               <li
                 className="cursor-pointer [&>*]:hover:text-brand-light"
                 onClick={() => router.push("/otherinsurance/health-insurance")}
               >
-                <a href="/otherinsurance/health-insurance">
+                <Link href="/otherinsurance/health-insurance">
                   Health&nbsp;Insurance
-                </a>
+                </Link>
               </li>
             </ul>
           </li>

@@ -32,7 +32,7 @@ const TestimonialSlider = () => {
       // console.log(response, "data here");
     } catch (error) {
       console.log(error);
-      setData((prev) => ({ ...prev, loading: false, error: true, data: {} }));
+      setData((prev) => ({ ...prev, loading: false, error: true, data: [] }));
     }
   };
 
