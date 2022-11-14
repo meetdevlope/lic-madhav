@@ -1,22 +1,34 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 
 const Dropdown = () => {
+  const [open1, setopen1] = useState(false);
+  const [open2, setopen2] = useState(false);
+
   const router = useRouter();
   return (
     <ul id="menu" className="z-50">
       <li className="parent">
-        <a className="hover:text-brand-light flex items-center justify-center gap-2">
+        <a
+          className="hover:text-brand-light flex items-center justify-center gap-2"
+          onClick={() => setopen1(!open1)}
+        >
           Our&nbsp;Services
           <span>
             <AiFillCaretDown />
           </span>
         </a>
-        <ul className="child z-50 pt-2 [&>li>a]:px-1">
+        <ul
+          className={`child z-[60] bg-white text-gray shd pt-2 [&>li>a]:px-1 absolute ${
+            open1 ? "block" : "hidden"
+          } `}
+        >
           <li
-            onClick={() => router.push("/lifeinsurance")}
+            onClick={() => {
+              router.push("/lifeinsurance");
+            }}
             className="[&>*]:hover:text-brand-light cursor-pointer"
           >
             <a>Insurance</a>
@@ -33,14 +45,21 @@ const Dropdown = () => {
           >
             <a>CLIA</a>
           </li>
-          <li className="parent !rounded-t-none z-[50]">
+          <li
+            className="parent !rounded-t-none z-[50]"
+            onClick={() => setopen2(!open2)}
+          >
             <a className="flex justify-center items-center gap-2">
               General&nbsp;Insurance
               <span>
                 <AiFillCaretDown />
               </span>
             </a>
-            <ul className="child [&>li>a]:px-2 pl-1 !rounded-lg overflow-hidden">
+            <ul
+              className={`child [&>li>a]:px-2 pl-1 shd tab:pt-0 pt-4 z-[70] !rounded-lg overflow-hidden absolute ${
+                open2 ? "block" : "hidden"
+              } `}
+            >
               <li className="cursor-pointer [&>*]:hover:text-brand-light">
                 <a
                   href="/otherinsurance/auto-insurance"

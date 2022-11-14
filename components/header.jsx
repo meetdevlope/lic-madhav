@@ -53,7 +53,7 @@ const Header = () => {
         } `}
       >
         <a onClick={() => router.push("/")}>Home</a>
-        <a onClick={() => router.push("/")}>Know&nbsp;Us</a>
+        <KnowUsDropdown />
         <Dropdown />
         <a>NRI&nbsp;Insurance</a>
         <a>Contact&nbsp;Us</a>
