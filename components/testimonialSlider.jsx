@@ -95,12 +95,12 @@ const TestimonialSlider = () => {
 
   return (
     <>
-      <div className="testimonialSection px-4 lg:h-screen h-auto flex flex-col gap-12 pt-16 max-w-7xl mx-auto my-0">
-        <h3 className="testimonial-title text-black font-bold my-0 mx-auto pt-0 lg:pt-32">
+      <div className="testimonialSection px-4 h-auto flex flex-col gap-12 pt-16 max-w-7xl mx-auto my-0">
+        <h3 className="testimonial-title text-black font-bold my-0 mx-auto pt-0 ">
           Testimonials
         </h3>
         <div className="Testi-slider-SR w-full mx-auto">
-          {/* <Slider {...settings}>
+          <Slider {...settings}>
             {data &&
               data?.map((element, idx) => (
                 <div key={idx}>
@@ -130,7 +130,7 @@ const TestimonialSlider = () => {
                   </div>
                 </div>
               ))}
-          </Slider> */}
+          </Slider>
         </div>
       </div>
     </>

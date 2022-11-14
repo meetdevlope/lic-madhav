@@ -39,7 +39,7 @@ const Header = () => {
         <a onClick={() => router.push("/")}>Home</a>
         <KnowUsDropdown />
         <Dropdown />
-        <a>NRI&nbsp;Insurance</a>
+        <a onClick={() => router.push("/nri-insurance")}>NRI&nbsp;Insurance</a>
         <a onClick={() => router.push("/contact-us")}>Contact&nbsp;Us</a>
       </div>
       <div

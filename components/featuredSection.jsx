@@ -67,7 +67,7 @@ const FeaturedBrands = ({ data }) => {
 
   return (
     <>
-      <div className="testimonialSection lg:h-screen h-auto flex flex-col gap-8 pt-16 px-8 tab:max-w-7xl mx-auto my-0">
+      <div className="testimonialSection h-auto flex flex-col gap-8 pt-16 px-8 tab:max-w-7xl mx-auto my-0">
         <h3 className="testimonial-title text-3xl text-black font-bold my-0 mx-auto pt-0 lg:pt-32">
           Featured Brands
         </h3>
