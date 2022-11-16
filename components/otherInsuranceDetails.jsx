@@ -53,14 +53,14 @@ const OtherInsuranceDetails = () => {
           data: response?.data?.healthInsurances?.data[0]?.attributes,
         }));
       //   setPlanData(response?.data?.licPlan?.data?.attributes);
-      console.log(
-        response?.data?.autoInsurances?.data[0]?.attributes,
-        "data here"
-      );
-      console.log(
-        response?.data?.healthInsurances?.data[0]?.attributes,
-        "data here"
-      );
+      // console.log(
+      //   response?.data?.autoInsurances?.data[0]?.attributes,
+      //   "data here"
+      // );
+      // console.log(
+      //   response?.data?.healthInsurances?.data[0]?.attributes,
+      //   "data here"
+      // );
     } catch (error) {
       console.log(error);
       setData((prev) => ({ ...prev, loading: false, error: true, data: {} }));

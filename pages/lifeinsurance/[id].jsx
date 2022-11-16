@@ -35,7 +35,7 @@ const IndividualPage = ({ id }) => {
         data: response?.data?.licPlan?.data?.attributes,
       }));
       //   setPlanData(response?.data?.licPlan?.data?.attributes);
-      console.log(response?.data?.licPlan?.data?.attributes, "data here");
+      // console.log(response?.data?.licPlan?.data?.attributes, "data here");
     } catch (error) {
       console.log(error);
       setData((prev) => ({ ...prev, loading: false, error: true, data: {} }));

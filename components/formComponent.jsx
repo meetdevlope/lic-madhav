@@ -3,7 +3,7 @@ import React from "react";
 
 const FormComponent = ({ formFields, initialValues }) => {
   const submitAction = (values) => {
-    console.log(values);
+    // console.log(values);
   };
   return (
     <div className="flex-1 w-full text-black">

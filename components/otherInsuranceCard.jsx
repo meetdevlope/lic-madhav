@@ -14,7 +14,7 @@ const InitData = {
 const OtherInsuranceCard = ({ type }) => {
   const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
 
-  console.log(type, "type");
+  // console.log(type, "type");
 
   const [{ loading, error, data }, setData] = useState(InitData);
   let query;
@@ -52,8 +52,8 @@ const OtherInsuranceCard = ({ type }) => {
           data: response?.data?.healthInsurances?.data,
         }));
 
-      console.log(response?.data?.healthInsurances?.data, "data here");
-      console.log(response?.data?.autoInsurances?.data, "data here");
+      // console.log(response?.data?.healthInsurances?.data, "data here");
+      // console.log(response?.data?.autoInsurances?.data, "data here");
     } catch (error) {
       console.log("something went wrong", error);
       setData((prev) => ({ ...prev, loading: false, error: true, data: [] }));

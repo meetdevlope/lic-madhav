@@ -23,6 +23,7 @@
     "react-markdown": "^8.0.3",
     "react-photo-gallery": "^8.0.0",
     "react-slick": "^0.29.0",
+    "react-toastify": "^9.1.1",
     "slick-carousel": "^1.8.1",
     "yup": "^0.32.11"
   },

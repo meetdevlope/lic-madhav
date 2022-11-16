@@ -8,7 +8,7 @@ const KnowUsDropdown = () => {
 
   const router = useRouter();
   return (
-    <ul className="bg-white">
+    <ul className="">
       <li className="tab:[&>ul]:hover:block" onClick={() => setopen(!open)}>
         <a className=" flex items-center justify-center gap-2">
           Know&nbsp;Us{" "}

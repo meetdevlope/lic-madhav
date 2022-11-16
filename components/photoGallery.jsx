@@ -4,6 +4,7 @@ import { photoGallery } from "../functions/photoGallery";
 import client from "../functions/apolloClient";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { awardsGallery } from "../functions/awardsGallery";
+import { ClipLoader } from "react-spinners";
 
 const PhotoGallery = ({ type }) => {
   const InitData = {
@@ -12,7 +13,7 @@ const PhotoGallery = ({ type }) => {
     data: [],
   };
 
-  console.log(type, "type");
+  // console.log(type, "type");
   const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
   const [{ loading, error, data }, setData] = useState(InitData);
 
@@ -82,6 +83,13 @@ const PhotoGallery = ({ type }) => {
     setCurrentImage(0);
     setViewerIsOpen(false);
   };
+
+  if (loading)
+    return (
+      <span className="fixed top-0 left-0 w-screen h-screen items-center z-50 bg-white opacity-50 flex justify-center">
+        <ClipLoader loading={true} size={"2rem"} color={"#ec268f"} />
+      </span>
+    );
 
   return (
     <div className="gallery">

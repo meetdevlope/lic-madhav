@@ -1,10 +1,22 @@
 import { Formik, Form } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import { MdCall, MdEmail, MdLocationPin } from "react-icons/md";
 import ButtonComponent from "./buttonComponent";
 import * as Yup from "yup";
+import client from "../functions/apolloClient";
+import { mutationContactForm } from "../functions/contactForm/mutation";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ClipLoader } from "react-spinners";
 
 const ContactUsSection = () => {
+  const InitData = {
+    loading: false,
+    error: false,
+  };
+
+  const [{ loading, error, data }, setData] = useState(InitData);
+
   const contactOptions = [
     {
       icon: <MdCall />,
@@ -20,15 +32,65 @@ const ContactUsSection = () => {
     },
   ];
 
+  const showToastErrorMessage = (message) => {
+    toast.error(
+      `Can't submit the form.${
+        message === "This attribute must be unique"
+          ? "Provided email already exist. Please enter other email."
+          : "Something is wrong"
+      }` || "Something went wrong !",
+      {
+        position: toast.POSITION.TOP_RIGHT,
+      }
+    );
+  };
+
+  const showToastSuccessMessage = () => {
+    toast.success(
+      "Thank you for submitting the form. We will contact you back",
+      {
+        position: toast.POSITION.TOP_RIGHT,
+      }
+    );
+  };
+
   const contactUsValidation = Yup.object({
     firstName: Yup.string().required("Required"),
     lastName: Yup.string().required("Required"),
     email: Yup.string().email("Email is not valid").required("Required"),
   });
 
-  const onSubmit = (values) => {
-    console.log(values);
+  const onSubmit = async (values) => {
+    setData((prev) => ({ loading: true, error: false }));
+    // console.log(values);
+
+    try {
+      const response = await client().mutate({
+        mutation: mutationContactForm,
+        variables: {
+          ...values,
+        },
+      });
+
+      setData(() => ({
+        loading: false,
+        error: false,
+      }));
+      showToastSuccessMessage();
+      // console.log(response);
+    } catch (err) {
+      showToastErrorMessage(err.message);
+      setData(() => ({ loading: false, error: true }));
+      // console.log("Error message is:", err.message);
+    }
   };
+
+  if (loading)
+    return (
+      <span className="fixed top-0 left-0 w-screen h-screen items-center z-50 bg-white opacity-50 flex justify-center">
+        <ClipLoader loading={true} size={"2rem"} color={"#ec268f"} />
+      </span>
+    );
 
   return (
     <section className="flex flex-col gap-2 w-full tab:flex-row py-16">

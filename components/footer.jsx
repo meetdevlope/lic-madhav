@@ -24,16 +24,27 @@ const Footer = () => {
           <a href="#">Contact Us</a>
         </div>
         <div className="flex gap-10 text-white text-xl my-8">
-          <FaFacebookF className="hover:text-brand-dark cursor-pointer transition" />
-          <FiInstagram className="hover:text-brand-dark cursor-pointer transition" />
-          <FiTwitter className="hover:text-brand-dark cursor-pointer transition" />
+          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+            <FaFacebookF className="hover:text-brand-dark cursor-pointer transition" />
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+            <FiInstagram className="hover:text-brand-dark cursor-pointer transition" />
+          </a>
+          <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+            <FiTwitter className="hover:text-brand-dark cursor-pointer transition" />
+          </a>
         </div>
       </div>
       <span className="text-white mt-10 text-xs flex justify-center items-center">
         &#169; 2022 All Rights Reserved.Developed by{" "}
-        <span className="font-semibold cursor-pointer text-center">
-          DEMAZE TECHNOLOGIES
-        </span>
+        <a
+          className="font-semibold text-xs hover:text-brand-dark cursor-pointer text-center"
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.demaze.in/"
+        >
+          &nbsp;DEMAZE TECHNOLOGIES
+        </a>
       </span>
     </footer>
   );

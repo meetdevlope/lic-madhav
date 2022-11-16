@@ -68,10 +68,7 @@ const Dropdown = () => {
                   Auto&nbsp;Insurance
                 </Link>
               </li>
-              <li
-                className="cursor-pointer [&>*]:hover:text-brand-light"
-                onClick={() => router.push("/otherinsurance/health-insurance")}
-              >
+              <li className="cursor-pointer [&>*]:hover:text-brand-light">
                 <Link href="/otherinsurance/health-insurance">
                   Health&nbsp;Insurance
                 </Link>
