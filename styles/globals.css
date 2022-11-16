@@ -211,6 +211,7 @@ p strong {
 
 ul li p,
 .markdown p {
+  text-align: left;
   font-size: 14px;
   color: #000;
 }

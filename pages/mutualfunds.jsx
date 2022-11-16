@@ -65,10 +65,10 @@ const MutualFunds = () => {
     <div>
       <h3 className="text-center mt-10">Mutual Funds</h3>
 
-      <div className="flex justify-center mb-4 gap-8">
+      <div className="flex justify-center flex-wrap m-5 tab:m-8 gap-2 tab:gap-8">
         {data?.map((item, i) => (
           <button
-            className={`hover:underline underline-offset-8 decoration-brand transition-all mt-20 mb-10 ${
+            className={`hover:underline underline-offset-8 decoration-brand transition-all m-2 tab:m-4 ${
               selcted?.attributes?.Slug === item?.attributes?.Slug
                 ? "underline"
                 : null
