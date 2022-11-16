@@ -7,8 +7,8 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <footer className="bg-brand px-10 pt-8 pb-4 tab:px-20 ">
-      <div className="flex flex-col tab:flex-row justify-between items-center">
+    <footer className="bg-brand text-white px-10 pt-8 pb-4 tab:px-20 ">
+      <div className="flex flex-col gap-4 tab:flex-row justify-between">
         <div className="h-16">
           <img
             src="/images/madhav_lic_logo_white.png"
@@ -17,25 +17,101 @@ const Footer = () => {
             onClick={() => router.push("/")}
           />
         </div>
-        <div className="text-white text-center flex flex-col tab:flex-row mt-8 gap-4 tab:my-0">
-          <a href="#">Home</a>
-          <a href="#">Services</a>
-          <a href="#">About Us</a>
-          <a href="#">Contact Us</a>
+        {/* <div className="text-white flex flex-col justify-between tab:flex-row mt-8 gap- tab:my-0"> */}
+        <div className="footer-link-container flex flex-col gap-2 text-left">
+          <a onClick={() => router.push("/")} className="text-lg">
+            Home
+          </a>
+
+          <a onClick={() => router.push("/contact-us")} className="text-lg">
+            Contact Us
+          </a>
+          <ul className="footer-link">
+            <span className="text-lg font-bold ">Know us</span>
+            <li>
+              <a onClick={() => router.push("/about-us")}>About Us</a>
+            </li>
+            <li>
+              <a onClick={() => router.push("/awards")}>Awards</a>
+            </li>
+            <li>
+              <a onClick={() => router.push("/testimonials")}>Testimonials</a>
+            </li>
+            <li>
+              <a onClick={() => router.push("/photo-gallery")}>Photo Gallery</a>
+            </li>
+          </ul>
         </div>
-        <div className="flex gap-10 text-white text-xl my-8">
-          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-            <FaFacebookF className="hover:text-brand-dark cursor-pointer transition" />
+        <div className="text-left flex flex-col gap-2">
+          <a onClick={() => router.push("/nri-insurance")} className="text-lg">
+            NRI Insurance{" "}
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
-            <FiInstagram className="hover:text-brand-dark cursor-pointer transition" />
-          </a>
-          <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
-            <FiTwitter className="hover:text-brand-dark cursor-pointer transition" />
-          </a>
+          <ul className="footer-link">
+            <span className="text-lg font-bold">Our Services</span>
+            <li>
+              <a onClick={() => router.push("/lifeinsurance")}>Insurance</a>
+            </li>
+            <li>
+              <a onClick={() => router.push("/mutualfunds")}>Mutual Funds</a>
+            </li>
+            <li>
+              <a onClick={() => router.push("/clia")}>CLIA</a>
+            </li>
+            <li>
+              <ul>
+                <span className="text-lg tab:text-base">General Insurance</span>
+                <li>
+                  <a
+                    onClick={() =>
+                      router.push("/otherinsurance/auto-insurance")
+                    }
+                  >
+                    Auto Insurance
+                  </a>
+                </li>
+                <li>
+                  <a
+                    onClick={() =>
+                      router.push("/otherinsurance/health-insurance")
+                    }
+                  >
+                    Health Insurance
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        {/* </div> */}
+        <div className="flex flex-col gap-4">
+          <span className="font-bold text-lg">Get In Touch</span>
+          <div className="flex gap-10 text-white text-xl">
+            <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+              <FaFacebookF
+                size={20}
+                className="hover:text-brand-dark cursor-pointer transition"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FiInstagram
+                size={20}
+                className="hover:text-brand-dark cursor-pointer transition"
+              />
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+              <FiTwitter
+                size={20}
+                className="hover:text-brand-dark cursor-pointer transition"
+              />
+            </a>
+          </div>
         </div>
       </div>
-      <span className="text-white mt-10 text-xs flex justify-center items-center">
+      {/* <span className="text-white mt-10 text-xs flex justify-center items-center">
         &#169; 2022 All Rights Reserved.Developed by{" "}
         <a
           className="font-semibold text-xs hover:text-brand-dark cursor-pointer text-center"
@@ -45,7 +121,7 @@ const Footer = () => {
         >
           &nbsp;DEMAZE TECHNOLOGIES
         </a>
-      </span>
+      </span> */}
     </footer>
   );
 };

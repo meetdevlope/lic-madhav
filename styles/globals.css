@@ -224,60 +224,67 @@ ul li p,
 
 /* HAMBURGER ANIMATION */
 
-@media only screen and (min-width: 600px)  {
-  
+@media only screen and (min-width: 600px) {
   .parent {
     display: block;
     position: relative;
     float: left;
     border-radius: 4px;
   }
-  
+
   .parent a {
     color: black;
     text-decoration: none;
   }
-  
+
   .parent:hover > ul {
     display: block;
     position: absolute;
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
   }
-  
+
   .child {
     display: none;
   }
-  
+
   .child li {
     background-color: white;
     padding: 4px;
   }
-  
+
   .child li a {
     color: #0000006f;
     padding-inline: 10px;
-  
+
     width: 100%;
   }
   .child li a:hover {
     color: #339ac0;
   }
-  
+
   ul ul ul {
     left: 100%;
     top: 0;
   }
-  
-  
 }
-  
 
 .shd {
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
 }
 
-
-
- img {
+img {
   margin: auto;
 }
+
+/* FOOTER */
+
+.footer-link li {
+  margin-left: 18px;
+  list-style: circle;
+}
+
+.footer-link li a {
+  font-weight: 400;
+}
+
+/* FOOTER */
