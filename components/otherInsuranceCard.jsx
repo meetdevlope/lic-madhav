@@ -12,8 +12,6 @@ const InitData = {
 };
 
 const OtherInsuranceCard = ({ type }) => {
-  const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
-
   // console.log(type, "type");
 
   const [{ loading, error, data }, setData] = useState(InitData);
@@ -86,7 +84,7 @@ const OtherInsuranceCard = ({ type }) => {
               key={i}
               type={type}
               title={item?.attributes?.company_name}
-              imgSrc={`${serverLink}${item?.attributes?.image?.data?.attributes?.url}`}
+              imgSrc={item?.attributes?.image?.data?.attributes?.url}
               // plans={item?.attributes?.lic_plans?.data}
               link={item?.attributes?.Slug}
             />

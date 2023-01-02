@@ -13,8 +13,6 @@ const InitData = {
 };
 
 const OtherInsuranceDetails = () => {
-  const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
-
   const router = useRouter();
   const slug = router?.query?.id;
   //   console.log(slug[1], "slug");
@@ -83,10 +81,7 @@ const OtherInsuranceDetails = () => {
     <div className="w-auto max-w-7xl mx-4 xl:mx-auto">
       {data?.cover_image?.data && (
         <div className="h-[30vh] my-10 overflow-hidden flex justify-center items-center">
-          <img
-            src={`${serverLink}${data?.cover_image?.data?.attributes?.url}`}
-            alt=""
-          />
+          <img src={data?.cover_image?.data?.attributes?.url} alt="" />
         </div>
       )}
       <h3>{data?.company_name}</h3>
@@ -96,7 +91,7 @@ const OtherInsuranceDetails = () => {
           <div className="flex-1 p-10">
             <img
               className="w-full"
-              src={`${serverLink}${data?.image?.data?.attributes?.url}`}
+              src={data?.image?.data?.attributes?.url}
               alt=""
             />
           </div>

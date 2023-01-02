@@ -14,7 +14,6 @@ const PhotoGallery = ({ type }) => {
   };
 
   // console.log(type, "type");
-  const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
   const [{ loading, error, data }, setData] = useState(InitData);
 
   let query;
@@ -41,7 +40,7 @@ const PhotoGallery = ({ type }) => {
             loading: false,
             error: false,
             data: response?.data?.awardsGalleries?.data.map((item) => ({
-              src: serverLink + item?.attributes?.src?.data?.attributes?.url,
+              src: item?.attributes?.src?.data?.attributes?.url,
               width: item?.attributes?.src?.data?.attributes?.width,
               height: item?.attributes?.src?.data?.attributes?.height,
             })),
@@ -55,7 +54,7 @@ const PhotoGallery = ({ type }) => {
             loading: false,
             error: false,
             data: response?.data?.photoGalleries?.data.map((item) => ({
-              src: serverLink + item?.attributes?.src?.data?.attributes?.url,
+              src: item?.attributes?.src?.data?.attributes?.url,
               width: item?.attributes?.src?.data?.attributes?.width,
               height: item?.attributes?.src?.data?.attributes?.height,
             })),

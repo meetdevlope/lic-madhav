@@ -12,7 +12,6 @@ const NriInsurance = () => {
     error: "",
     data: [],
   };
-  const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
 
   const router = useRouter();
   // console.log(router?.query?.id, "router");
@@ -58,10 +57,10 @@ const NriInsurance = () => {
 
   return (
     <InsuranceDetailsComp
-      coverImage={`${serverLink}${data?.cover_image?.data?.attributes?.url}`}
+      coverImage={data?.cover_image?.data?.attributes?.url}
       title={data?.title}
       description={data?.description}
-      mainImage={`${serverLink}${data?.image?.data?.attributes?.url}`}
+      mainImage={data?.image?.data?.attributes?.url}
       action={() => (
         <div className="flex items-center flex-col md:flex-row justify-center gap-4 my-4">
           <ButtonComponent

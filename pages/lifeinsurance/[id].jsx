@@ -13,8 +13,6 @@ const InitData = {
 };
 
 const IndividualPage = ({ id }) => {
-  const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
-
   const router = useRouter();
   // console.log(router?.query?.id, "router");
   // const id = router?.?.id;
@@ -56,11 +54,11 @@ const IndividualPage = ({ id }) => {
 
   return (
     <InsuranceDetailsComp
-      coverImage={`${serverLink}${data?.cover_image?.data?.attributes?.url}`}
+      coverImage={data?.cover_image?.data?.attributes?.url}
       title={data?.name}
       description={data?.description}
-      mainImage={`${serverLink}${data?.image?.data?.attributes?.url}`}
-      documentImage={`${serverLink}${data?.document?.data?.attributes?.url}`}
+      mainImage={data?.image?.data?.attributes?.url}
+      documentImage={data?.document?.data?.attributes?.url}
       action={() => (
         <div className="flex items-center flex-col md:flex-row justify-center gap-4 my-4">
           <ButtonComponent
@@ -71,7 +69,7 @@ const IndividualPage = ({ id }) => {
 
           {data?.brochure?.data && (
             <a
-              href={`${serverLink}${data?.brochure?.data?.attributes?.url}`}
+              href={data?.brochure?.data?.attributes?.url}
               target="_blank"
               rel="noreferrer"
             >

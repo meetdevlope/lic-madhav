@@ -12,7 +12,6 @@ const InitData = {
 };
 
 const TestimonialSlider = () => {
-  const serverLink = process.env.NEXT_PUBLIC_SERVER_LINK;
   const [{ loading, error, data }, setData] = useState(InitData);
 
   const getData = async () => {
@@ -111,13 +110,19 @@ const TestimonialSlider = () => {
                       </p>
                     </div>
                     <div className="mt-12 flex flex-row gap-4 justify-center items-center">
-                      <div className="flex items-center justify-center w-16 h-16 rounded-full overflow-hidden ">
-                        <img
-                          src={`${serverLink}${element?.attributes?.image?.data?.attributes?.url}`}
-                          alt="profile-image"
-                          className="w-full"
-                        />
-                      </div>
+                      {element?.attributes?.image?.data?.attributes?.url && (
+                        <div className="flex items-center justify-center w-16 h-16 rounded-full overflow-hidden ">
+                          (
+                          <img
+                            src={
+                              element?.attributes?.image?.data?.attributes?.url
+                            }
+                            alt="profile-image"
+                            className="w-full"
+                          />
+                          )
+                        </div>
+                      )}
                       <div className="flex flex-col">
                         <h1 className="text-xl text-brand-dark">
                           {element?.attributes?.name}
