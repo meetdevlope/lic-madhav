@@ -109,6 +109,13 @@ const Footer = () => {
               />
             </a>
           </div>
+          <div className="flex flex-col gap-2 mt-2">
+            {" "}
+            <a onClick={() => router.push("/privacy-policy")}>Privacy Policy</a>
+            <a onClick={() => router.push("/terms&conditions")}>
+              Terms and Conditions
+            </a>
+          </div>
         </div>
       </div>
       {/* <span className="text-white mt-10 text-xs flex justify-center items-center">
