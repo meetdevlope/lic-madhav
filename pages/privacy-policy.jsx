@@ -60,7 +60,7 @@ const Privacy_Policy = () => {
     );
 
   return (
-    <section className="py-16 max-w-7xl mx-auto">
+    <section className="py-16 max-w-7xl mx-auto [&>div>p]:text-black [&>div>p]:text-lg [&>div>p>strong]:text-lg">
       {data && <MarkdownLayout content={data} />}
     </section>
   );
