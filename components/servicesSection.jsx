@@ -6,25 +6,19 @@ const ServicesSection = () => {
   const cardContent = [
     {
       cardTitle: "Category 1",
-      icon: <BiHome size={"2rem"} color="gray" />,
+      icon: <BiHome size={"5rem"} color="gray" />,
       cardDescription:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
     },
     {
       cardTitle: "Category 2",
-      icon: <BiHome size={"2rem"} color="gray" />,
+      icon: <BiHome size={"5rem"} color="gray" />,
       cardDescription:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
     },
     {
       cardTitle: "Category 3",
-      icon: <BiHome size={"2rem"} color="gray" />,
-      cardDescription:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      cardTitle: "Category 4",
-      icon: <BiHome size={"2rem"} color="gray" />,
+      icon: <BiHome size={"5rem"} color="gray" />,
       cardDescription:
         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
     },

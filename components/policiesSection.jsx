@@ -6,51 +6,39 @@ const PoliciesSection = () => {
   const cardContent = [
     {
       cardTitle: "Policy 1",
-      icon: <BiHome color="gray" size={"2rem"} />,
+      icon: <BiHome color="gray" size={"5rem"} />,
       cardDescription:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. ",
     },
     {
       cardTitle: "Policy 2",
-      icon: <BiHome color="gray" size={"2rem"} />,
+      icon: <BiHome color="gray" size={"5rem"} />,
       cardDescription:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. ",
     },
     {
       cardTitle: "Policy 3",
-      icon: <BiHome color="gray" size={"2rem"} />,
+      icon: <BiHome color="gray" size={"5rem"} />,
       cardDescription:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. ",
     },
     {
       cardTitle: "Policy 4",
-      icon: <BiHome color="gray" size={"2rem"} />,
+      icon: <BiHome color="gray" size={"5rem"} />,
       cardDescription:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. ",
     },
     {
       cardTitle: "Policy 5",
-      icon: <BiHome color="gray" size={"2rem"} />,
+      icon: <BiHome color="gray" size={"5rem"} />,
       cardDescription:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. ",
     },
     {
       cardTitle: "Policy 6",
-      icon: <BiHome color="gray" size={"2rem"} />,
+      icon: <BiHome color="gray" size={"5rem"} />,
       cardDescription:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      cardTitle: "Policy 7",
-      icon: <BiHome color="gray" size={"2rem"} />,
-      cardDescription:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      cardTitle: "Policy 8",
-      icon: <BiHome color="gray" size={"2rem"} />,
-      cardDescription:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. Iure, odio! Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui earum nemo debitis modi, obcaecati voluptatem praesentium ipsa magnam. ",
     },
   ];
   return (

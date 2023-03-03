@@ -31,7 +31,7 @@ const Dropdown = () => {
             }}
             className="[&>*]:hover:text-brand-light cursor-pointer"
           >
-            <a>Insurance</a>
+            <a>Life Insurance</a>
           </li>
           <li
             onClick={() => router.push("/mutualfunds")}
