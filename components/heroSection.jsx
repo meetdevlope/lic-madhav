@@ -58,6 +58,7 @@ const HeroSection = () => {
           <div className="flex gap-8">
             {data?.buttons?.data.map((item, i) => (
               <ButtonComponent
+                key={i}
                 appearance={item.attributes.buttonType}
                 buttonText={item.attributes.buttonText}
                 onClick={() => router.push(item.attributes.buttonLink)}
