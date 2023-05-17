@@ -64,7 +64,7 @@ const NriInsurance = () => {
       action={() => (
         <div className="flex items-center flex-col md:flex-row justify-center gap-4 my-4">
           <ButtonComponent
-            appearance={"pri-out"}
+            appearance={"pri_out"}
             buttonText={`Go Home`}
             onClick={() => router.push("/")}
           />

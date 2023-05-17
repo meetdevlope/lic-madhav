@@ -9,7 +9,7 @@ function ButtonComponent({ buttonText, appearance, buttonClass, ...props }) {
         "bg-brand hover:bg-brand-light text-white transition-all":
           appearance === "pri",
         "border-brand border text-brand hover:bg-brand hover:border-brand hover:text-white transition-all ":
-          appearance === "pri-out",
+          appearance === "pri_out",
         "bg-gray text-white cursor-not-allowed": appearance === "disabled",
         [buttonClass]: !!buttonClass,
       })}

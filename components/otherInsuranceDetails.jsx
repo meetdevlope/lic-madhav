@@ -101,7 +101,7 @@ const OtherInsuranceDetails = () => {
       <div className="flex items-center flex-col md:flex-row justify-center gap-4 my-4">
         {slug[0] === "auto-insurance" && (
           <ButtonComponent
-            appearance={"pri-out"}
+            appearance={"pri_out"}
             buttonText={`Go Back`}
             onClick={() => router.push(`/otherinsurance/auto-insurance`)}
           />
@@ -109,7 +109,7 @@ const OtherInsuranceDetails = () => {
 
         {slug[0] === "health-insurance" && (
           <ButtonComponent
-            appearance={"pri-out"}
+            appearance={"pri_out"}
             buttonText={`Go Back`}
             onClick={() => router.push(`/otherinsurance/health-insurance`)}
           />

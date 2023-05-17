@@ -1,31 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+// import Counter from "react-number-increment";
 
 const counterData = [
   {
-    number: "10,000",
+    number: 10000,
     title: "Policies claimed",
   },
   {
-    number: "4,000",
+    number: 4000,
     title: "Satisfied clients",
   },
   {
-    number: "21",
+    number: 21,
     title: "Branches",
   },
 ];
 
-const Counter = () => {
-  return (
-    <div className="w-full flex flex-1 flex-wrap tab:flex-nowrap justify-center gap-8 tab:gap-16">
-      {counterData.map((counter) => (
-        <div className="text-center" key={counter.number}>
-          <span className="text-4xl font-bold">{counter.number + "+"} </span>
-          <p>{counter.title}</p>
-        </div>
-      ))}
-    </div>
-  );
+const Counter = ({ number }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    for (let count = 0; count <= number; count++) {
+      setTimeout(() => {
+        setCount(count);
+      }, 1000);
+    }
+  }, []);
+  return <h3>{count}+</h3>;
 };
 
 export default Counter;

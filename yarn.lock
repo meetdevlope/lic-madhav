@@ -2872,6 +2872,11 @@ react-motion@^0.5.0:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
+react-number-increment@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/react-number-increment/-/react-number-increment-0.0.14.tgz#3e49d74dd344d44b8be11494d2c826abc7212b7b"
+  integrity sha512-ky7DLQiYzcy1OfkECM5rJmdKrIl8vjlWcsE1Fxq1hdBx8K2BVUv4L3s4uwmHpWfau8JbX0IgAEt2VRzsVxWKIQ==
+
 react-photo-gallery@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/react-photo-gallery/-/react-photo-gallery-8.0.0.tgz#04ff9f902a2342660e63e6817b4f010488db02b8"
